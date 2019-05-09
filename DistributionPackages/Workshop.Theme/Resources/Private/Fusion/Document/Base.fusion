@@ -31,8 +31,10 @@ prototype(Workshop.Theme:Document.Base) < prototype(Neos.Fusion:Component) {
             <Workshop.Theme:Component.Icons />
             <noscript>{Translation.translate('noscript', null, [], null, 'Workshop.Theme')}</noscript>
             <Workshop.Theme:Document.Fragment.Header />
+            <Jonnitto.Slider:PageSlider.Frontend />
             {props.content}
             <Workshop.Theme:Document.Fragment.Footer />
+            <Jonnitto.Slider:PageSlider.Backend />
         `
     }
 }
