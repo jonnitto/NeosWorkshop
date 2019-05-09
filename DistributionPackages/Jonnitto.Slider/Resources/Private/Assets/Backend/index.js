@@ -1,2 +1,0 @@
-import './ScrollTo';
-import './PageSlider';

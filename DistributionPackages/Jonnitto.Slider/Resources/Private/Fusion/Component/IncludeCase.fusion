@@ -1,3 +1,0 @@
-prototype(Jonnitto.Slider:IncludeCase) < prototype(Carbon.IncludeAssets:Case) {
-    mixin = 'Jonnitto.Slider:Include'
-}
