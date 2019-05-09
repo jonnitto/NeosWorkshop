@@ -1,0 +1,37 @@
+prototype(Neos.Seo:TwitterCard) {
+    image {
+        pageImage {
+            pageWithImage = ${q(node).filter('[image instanceof "Neos\Media\Domain\Model\ImageInterface"]')}
+            condition = ${this.pageWithImage.is()}
+            renderer = ${this.pageWithImage.property('image')}
+        }
+        contentImage {
+            firstContentWithImage = ${q(node).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof Neos.Neos:Content][image instanceof "Neos\Media\Domain\Model\ImageInterface"]')}
+            condition = ${this.firstContentWithImage.count()}
+            renderer = ${this.firstContentWithImage.first().property('image')}
+        }
+    }
+}
+
+prototype(Neos.Seo:OpenGraphMetaTags) {
+    image {
+        pageImage {
+            pageWithImage = ${q(node).filter('[image instanceof "Neos\Media\Domain\Model\ImageInterface"]')}
+            condition = ${this.pageWithImage.is()}
+            renderer = ${this.pageWithImage.property('image')}
+        }
+        contentImage {
+            firstContentWithImage = ${q(node).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof Neos.Neos:Content][image instanceof "Neos\Media\Domain\Model\ImageInterface"]')}
+            condition = ${this.firstContentWithImage.count()}
+            renderer = ${this.firstContentWithImage.first().property('image')}
+        }
+    }
+}
+
+prototype(Neos.Seo:XmlSitemap) {
+    body.includeImageUrls = true
+}
+
+prototype(Neos.Seo:TitleTag) {
+    outputSuffixOnTitleOverride = false
+}

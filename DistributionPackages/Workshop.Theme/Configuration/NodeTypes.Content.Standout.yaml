@@ -1,0 +1,46 @@
+'Workshop.Theme:Content.Standout':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Carbon.FirstElement:Mixin': true
+    'Carbon.Image:Image': true
+    'Carbon.Image:Lightbox': true
+    'Carbon.Image:Link': true
+    'Carbon.Image:Caption': true
+    'Carbon.Image:AlternativeText': true
+  ui:
+    label: 'Text mit Bild'
+    position: 40
+    inspector:
+      groups:
+        settings:
+          position: 10
+          icon: icon-paint-brush
+          label: 'Look & Feel'
+  properties:
+    alignment:
+      options:
+        silhouette: 'alignment.horizontal'
+      ui:
+        label: 'Position Bild'
+    title:
+      options:
+        silhouette: 'text.title'
+    text:
+      options:
+        silhouette: 'text.paragraph'
+    background:
+      type: string
+      ui:
+        label: Hintergrundfarbe
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          position: 10
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            placeholder: Kein Hintergrund
+            allowEmpty: true
+            values:
+              dark:
+                label: dunkelgrau
+                icon: icon-paint-brush

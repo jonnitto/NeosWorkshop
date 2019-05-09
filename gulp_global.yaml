@@ -1,0 +1,4 @@
+global:
+  notifications: true
+  browserSync:
+    proxyRootFolder: false

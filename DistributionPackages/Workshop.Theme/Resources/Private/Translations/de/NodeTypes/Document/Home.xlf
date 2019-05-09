@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Workshop.Theme" source-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="ui.label" xml:space="preserve">
+                <source>Startseite</source>
+            </trans-unit>
+            <trans-unit id="tabs.contact" xml:space="preserve">
+                <source>Kontaktdaten</source>
+            </trans-unit>
+            <trans-unit id="groups.footernavigation" xml:space="preserve">
+                <source>Fußzeilennavigation</source>
+            </trans-unit>
+            <trans-unit id="groups.social" xml:space="preserve">
+                <source>Soziale Netzwerke</source>
+            </trans-unit>
+            <trans-unit id="groups.contact" xml:space="preserve">
+                <source>Kontaktdaten</source>
+            </trans-unit>
+            <trans-unit id="properties.footernavigation" xml:space="preserve">
+                <source>Fußzeilennavigation</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

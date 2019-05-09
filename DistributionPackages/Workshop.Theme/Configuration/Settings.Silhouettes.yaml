@@ -1,0 +1,242 @@
+Sitegeist:
+  Silhouettes:
+    properties:
+      text:
+        title:
+          type: string
+          search:
+            fulltextExtractor: "${Indexing.extractInto('h2', value)}"
+          ui:
+            inlineEditable: true
+            inline:
+              editorOptions:
+                placeholder: 'Workshop.Theme:NodeTypes.Placeholder:title'
+                autoparagraph: false
+                formatting:
+                  strong: false
+                  em: false
+                  underline: false
+                  strikethrough: true
+                  code: true
+                  sub: true
+                  sup: true
+                  p: false
+                  h1: false
+                  h2: false
+                  h3: false
+                  h4: false
+                  h5: false
+                  table: false
+                  a: true
+                  ul: false
+                  ol: false
+                  left: false
+                  right: false
+                  center: false
+                  justify: false
+                  removeFormat: true
+        subtitle:
+          type: string
+          search:
+            fulltextExtractor: "${Indexing.extractInto('h3', value)}"
+          ui:
+            inlineEditable: true
+            inline:
+              editorOptions:
+                placeholder: 'Workshop.Theme:NodeTypes.Placeholder:subtitle'
+                autoparagraph: false
+                formatting:
+                  strong: false
+                  em: false
+                  underline: false
+                  strikethrough: true
+                  code: true
+                  sub: true
+                  sup: true
+                  p: false
+                  h1: false
+                  h2: false
+                  h3: false
+                  h4: false
+                  h5: false
+                  table: false
+                  a: true
+                  ul: false
+                  ol: false
+                  left: false
+                  right: false
+                  center: false
+                  justify: false
+                  removeFormat: true
+        plain:
+          type: string
+          search:
+            fulltextExtractor: '${Indexing.extractHtmlTags(value)}'
+          ui:
+            inlineEditable: true
+            inline:
+              editorOptions:
+                placeholder: 'Workshop.Theme:NodeTypes.Placeholder:plain'
+                autoparagraph: false
+                formatting:
+                  strong: false
+                  em: true
+                  underline: false
+                  strikethrough: false
+                  code: false
+                  sub: false
+                  sup: false
+                  p: false
+                  h1: false
+                  h2: false
+                  h3: false
+                  h4: false
+                  h5: false
+                  table: false
+                  a: false
+                  ul: false
+                  ol: false
+                  left: false
+                  right: false
+                  center: false
+                  justify: false
+                  removeFormat: true
+        pure:
+          type: string
+          search:
+            fulltextExtractor: '${Indexing.extractHtmlTags(value)}'
+          ui:
+            inlineEditable: true
+            inline:
+              editorOptions:
+                placeholder: 'Workshop.Theme:NodeTypes.Placeholder:pure'
+                autoparagraph: false
+                formatting:
+                  strong: true
+                  em: true
+                  underline: false
+                  strikethrough: true
+                  code: true
+                  sub: true
+                  sup: true
+                  p: false
+                  h1: false
+                  h2: false
+                  h3: false
+                  h4: false
+                  h5: false
+                  table: false
+                  a: true
+                  ul: false
+                  ol: false
+                  left: false
+                  right: false
+                  center: false
+                  justify: false
+                  removeFormat: true
+        link:
+          type: string
+          search:
+            fulltextExtractor: '${Indexing.extractHtmlTags(value)}'
+          ui:
+            inlineEditable: true
+            inline:
+              editorOptions:
+                placeholder: 'Workshop.Theme:NodeTypes.Placeholder:link'
+                autoparagraph: false
+                formatting:
+                  strong: true
+                  em: true
+                  underline: false
+                  strikethrough: true
+                  code: true
+                  sub: true
+                  sup: true
+                  p: false
+                  h1: false
+                  h2: false
+                  h3: false
+                  h4: false
+                  h5: false
+                  table: false
+                  a: false
+                  ul: false
+                  ol: false
+                  left: false
+                  right: false
+                  center: false
+                  justify: false
+                  removeFormat: true
+        paragraph:
+          type: string
+          search:
+            fulltextExtractor: '${Indexing.extractHtmlTags(value)}'
+          ui:
+            inlineEditable: true
+            inline:
+              editorOptions:
+                placeholder: 'Workshop.Theme:NodeTypes.Placeholder:text'
+                autoparagraph: true
+                formatting:
+                  strong: true
+                  em: true
+                  underline: false
+                  strikethrough: true
+                  code: true
+                  sub: true
+                  sup: true
+                  p: true
+                  h1: false
+                  h2: true
+                  h3: true
+                  h4: true
+                  h5: false
+                  pre: true
+                  table: true
+                  a: true
+                  ul: true
+                  ol: true
+                  left: false
+                  right: false
+                  center: false
+                  justify: false
+                  removeFormat: true
+      alignment:
+        horizontal:
+          type: string
+          ui:
+            label: 'Workshop.Theme:NodeTypes.Alignment:horizontal'
+            reloadIfChanged: true
+            inspector:
+              group: settings
+              position: 100
+              editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+              editorOptions:
+                placeholder: 'Workshop.Theme:NodeTypes.Alignment:placeholder'
+                allowEmpty: true
+                values:
+                  left:
+                    label: 'Workshop.Theme:NodeTypes.Alignment:left'
+                    icon: 'fas fa-long-arrow-alt-left'
+                  right:
+                    label: 'Workshop.Theme:NodeTypes.Alignment:right'
+                    icon: 'fas fa-long-arrow-alt-right'
+        vertical:
+          type: string
+          ui:
+            label: 'Workshop.Theme:NodeTypes.Alignment:vertical'
+            reloadIfChanged: true
+            inspector:
+              group: settings
+              position: 100
+              editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+              editorOptions:
+                placeholder: 'Workshop.Theme:NodeTypes.Alignment:placeholder'
+                allowEmpty: true
+                values:
+                  top:
+                    label: 'Workshop.Theme:NodeTypes.Alignment:top'
+                    icon: 'fas fa-long-arrow-alt-up'
+                  bottom:
+                    label: 'Workshop.Theme:NodeTypes.Alignment:bottom'
+                    icon: 'fas fa-long-arrow-alt-down'

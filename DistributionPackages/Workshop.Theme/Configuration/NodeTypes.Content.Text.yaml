@@ -1,0 +1,35 @@
+'Workshop.Theme:Content.Text':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Carbon.FirstElement:Mixin': true
+  ui:
+    label: Text
+    icon: 'fas fa-file-alt'
+    position: 20
+    inspector:
+      groups:
+        settings:
+          position: 10
+          icon: 'fas fa-paint-brush'
+          label: 'Anzeige'
+  properties:
+    oneRow:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Einspaltiger Text'
+        reloadIfChanged: true
+        inspector:
+          group: settings
+    title:
+      options:
+        silhouette: 'text.title'
+    subtitle:
+      options:
+        silhouette: 'text.subtitle'
+    text:
+      options:
+        silhouette: 'text.paragraph'
+    text2:
+      options:
+        silhouette: 'text.paragraph'

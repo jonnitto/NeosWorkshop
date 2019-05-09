@@ -1,0 +1,93 @@
+'Workshop.Theme:Content.Team.Container':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.Neos:ContentCollection': true
+  label: "${(q(node).children().count() ? q(node).children().count() + ' Personen' : (I18n.translate(node.nodeType.label) || node.nodeType.name))}"
+  ui:
+    label: Team
+    icon: 'fas fa-users'
+    group: special
+    inlineEditable: true
+    position: 100
+    creationDialog:
+      elements:
+        persons:
+          type: string
+          ui:
+            label: 'Personen (jede Zeile wird eine Person)'
+            editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+  options:
+    template:
+      childNodes:
+        persons:
+          type: 'Workshop.Theme:Content.Team.Item'
+          properties:
+            title: '${item}'
+            uriPathSegment: '${Carbon.String.urlize(item)}'
+          withItems: '${String.pregSplit(data.persons, "/\n/")}'
+          when: '${data.persons}'
+  constraints:
+    nodeTypes:
+      '*': false
+      'Workshop.Theme:Content.Team.Item': true
+  properties:
+    title:
+      options:
+        silhouette: 'text.title'
+    subtitle:
+      options:
+        silhouette: 'text.subtitle'
+
+'Workshop.Theme:Content.Team.Item':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Workshop.Theme:Constraint.Content.Restricted': true
+  ui:
+    label: Person
+    icon: 'fas fa-user'
+    inspector:
+      groups:
+        settings:
+          label: Einstellungen
+          icon: 'fas fa-user'
+  properties:
+    title:
+      type: string
+      options:
+        showInCreationDialog: true
+      ui:
+        label: 'Vorname Nachname'
+        reloadIfChanged: true
+        inspector:
+          group: settings
+      validation:
+        'Neos.Neos/Validation/LabelValidator': []
+    role:
+      type: string
+      options:
+        showInCreationDialog: true
+      ui:
+        label: Funktion
+        reloadIfChanged: true
+        inspector:
+          group: settings
+    phone:
+      type: string
+      options:
+        showInCreationDialog: true
+      ui:
+        label: Telefon
+        reloadIfChanged: true
+        inspector:
+          group: settings
+    mail:
+      type: string
+      options:
+        showInCreationDialog: true
+      ui:
+        label: E-Mail
+        reloadIfChanged: true
+        inspector:
+          group: settings
+      validation:
+        'Neos.Neos/Validation/EmailAddressValidator': []

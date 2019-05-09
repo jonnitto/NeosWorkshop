@@ -1,0 +1,6 @@
+@mixin create-teaser-breakpoint($rows: 2, $breakpoint: xs, $gutter: $grid-gutter-width) {
+  @include media-break-up($breakpoint) {
+    flex: 0 0 calc(#{percentage(1 / $rows)} - #{$gutter});
+    max-width: calc(#{percentage(1 / $rows)} - #{$gutter});
+  }
+}

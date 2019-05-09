@@ -1,0 +1,61 @@
+prototype(Workshop.Theme:Component.Card) < prototype(Neos.Fusion:Component) {
+    node = null
+    link = ${this.node ? 'node://' + this.node.identifier : link ? link : false}
+    backendLink = false
+    additionalClass = null
+    title = null
+    renderDefaultTagIfNoLink = ${node.context.inBackend}
+    additionalParams = Neos.Fusion:DataStructure
+
+    content = null
+    namespace = null
+    lightbox = null
+    caption = null
+    showCaption = false
+
+    @if.hasContent = ${this.content}
+
+    renderer = Carbon.Link:Link {
+        link = ${props.link}
+        backendLink = ${props.backendLink}
+        title = ${props.title}
+        renderDefaultTagIfNoLink = ${props.renderDefaultTagIfNoLink}
+        defaultTagName = 'div'
+        additionalParams = ${props.additionalParams}
+        link = Neos.Fusion:Case {
+            hasLightbox {
+                condition = ${props.lightbox}
+                renderer = Neos.Neos:ImageUri {
+                    asset = ${props.lightbox}
+                    maximumWidth = ${Configuration.setting('Carbon.Image.lightbox.maximumWidth')}
+                    maximumHeight = ${Configuration.setting('Carbon.Image.lightbox.maximumHeight')}
+                }
+            }
+            default {
+                condition = true
+                renderer = ${props.link}
+            }
+        }
+
+        attributes {
+            data-size = ${props.lightbox ? (props.lightbox.width + 'x' + props.lightbox.height) : false}
+            //data-title = ${this.caption}
+        }
+
+        additionalClass = Neos.Fusion:DataStructure {
+            card = 'card'
+            lightbox = ${props.lightbox ? Configuration.setting('Carbon.Image.lightbox.class') : false}
+            additionalClass = ${props.additionalClass ? String.trim(Type.isArray(props.additionalClass) ? Array.join(Carbon.Array.filter(props.additionalClass), ' ') : String.toString(props.additionalClass)) : false}
+            namespace = ${props.namespace}
+        }
+
+        content = afx`
+            <Neos.Fusion:Tag tagName={props.lightbox || props.caption ? 'figure' : 'div'} attributes.class={'card__content' + (props.namespace ? ' ' + props.namespace + '__content ' : '')}>
+                {props.content}
+                <figcaption @if.hasCaption={props.caption} class={'card__figcaption' + (props.namespace ? ' ' + props.namespace + '__figcaption ' : '') + (props.showCaption ? '' : ' sr-only')}>
+                    {props.caption}
+                </figcaption>
+            </Neos.Fusion:Tag>
+        `
+    }
+}

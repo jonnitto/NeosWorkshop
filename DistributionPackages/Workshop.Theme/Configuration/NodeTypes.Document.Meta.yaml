@@ -1,0 +1,16 @@
+'Workshop.Theme:Document.Meta':
+  superTypes:
+    'Workshop.Theme:Mixin.Document': true
+    'Workshop.Theme:Constraint.Document.NoSubDocument': true
+    'Workshop.Theme:Mixin.MainContentCollection': true
+  ui:
+    label: i18n
+    icon: 'fas fa-info-circle'
+    position: 30
+  properties:
+    _hiddenInIndex:
+      defaultValue: true
+      ui:
+        inspector:
+          editorOptions:
+            disabled: true

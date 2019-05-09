@@ -1,0 +1,15 @@
+# Add this mixin to you document
+'Jonnitto.Slider:Mixin.PageSlider':
+  abstract: true
+  childNodes:
+    pageslides:
+      type: 'Neos.Neos:ContentCollection'
+      position: 'start 1'
+      constraints:
+        nodeTypes:
+          '*': false
+          'Jonnitto.Slider:PageSlider.Slide': true
+
+'Neos.Neos:Document':
+  superTypes:
+    'Jonnitto.Slider:Mixin.PageSlider': true

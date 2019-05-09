@@ -1,0 +1,1 @@
+prototype(Workshop.Theme:Document.Meta) < prototype(Workshop.Theme:Document.Page)

@@ -1,0 +1,42 @@
+prototype(Workshop.Theme:Content.Standout) < prototype(Neos.Neos:ContentComponent) {
+    titleProperty = 'title'
+    textProperty = 'text'
+    tagName = ${this.isFirstElement ? 'h1' : 'h2'}
+    maximumWidth = 740
+    alignment = ${q(node).property('alignment')}
+
+    asset = ${q(node).property('image')}
+    background = ${q(node).property('background')}
+    alternativeText = ${q(node).property('alternativeText')}
+    link = ${q(node).property('link')}
+    caption = ${q(node).property('caption')}
+    lightbox = ${q(node).property('lightbox')}
+
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+
+        title = Neos.Neos:Editable {
+            @if.set = ${this.property}
+            property = ${props.titleProperty}
+            block = false
+        }
+        text = Neos.Neos:Editable {
+            @if.set = ${this.property}
+            property = ${props.textProperty}
+        }
+
+        renderer = afx`
+            <div class={['reveal standout', props.alignment == 'right' ? ' standout--right' : null]}>
+                <div class={['standout__content', props.background ? 'standout__content--dark' : null]}>
+                    <Neos.Fusion:Tag @if.set={props.title} tagName={props.tagName} attributes.class='standout__title'>
+                        {props.title}
+                    </Neos.Fusion:Tag>
+                    {props.text}
+                </div>
+                <figure class='standout__figure'>
+                    <Workshop.Theme:Component.Image {...props} />
+                </figure>
+            </div>
+        `
+    }
+}

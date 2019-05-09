@@ -1,0 +1,5 @@
+'Workshop.Theme:Mixin.MainContentCollection':
+  abstract: true
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'

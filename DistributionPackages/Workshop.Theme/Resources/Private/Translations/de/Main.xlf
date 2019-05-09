@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Workshop.Theme" source-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="readmore" xml:space="preserve">
+                <source>mehr lesen</source>
+            </trans-unit>
+            <trans-unit id="menu" xml:space="preserve">
+                <source>Navigation</source>
+            </trans-unit>
+            <trans-unit id="search" xml:space="preserve">
+                <source>Suchen</source>
+            </trans-unit>
+            <trans-unit id="back" xml:space="preserve">
+                <source>Zurück</source>
+            </trans-unit>
+            <trans-unit id="previous" xml:space="preserve">
+                <source>zurück</source>
+            </trans-unit>
+            <trans-unit id="next" xml:space="preserve">
+                <source>vorwärts</source>
+            </trans-unit>
+            <trans-unit id="backToOverview" xml:space="preserve">
+                <source>Zurück zur Übersicht</source>
+            </trans-unit>
+            <trans-unit id="dialog.close" xml:space="preserve">
+                <source>Dieses Fenster schließen</source>
+            </trans-unit>
+            <trans-unit id="backToHomepage" xml:space="preserve">
+                <source>Zurück zu der Startseite</source>
+            </trans-unit>
+            <trans-unit id="noscript" xml:space="preserve">
+                <source><![CDATA[Um den vollen Funktionsumfang dieser Webseite zu erfahren, benötigen Sie JavaScript. <br/>Hier finden Sie die <a href="https://www.enable-javascript.com/de/">Anleitung wie Sie JavaScript in Ihrem Browser einschalten</a>.]]></source>
+            </trans-unit>
+            <trans-unit id="contact" xml:space="preserve">
+                <source>Kontakt</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

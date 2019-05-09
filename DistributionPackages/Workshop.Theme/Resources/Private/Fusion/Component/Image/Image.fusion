@@ -1,0 +1,2 @@
+prototype(Workshop.Theme:Component.Image) < prototype(Carbon.Image:Tag)
+prototype(Workshop.Theme:Component.Background) < prototype(Carbon.Image:Background)

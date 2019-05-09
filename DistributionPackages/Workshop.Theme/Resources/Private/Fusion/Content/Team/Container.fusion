@@ -1,0 +1,11 @@
+prototype(Workshop.Theme:Content.Team.Container) < prototype(Neos.Neos:ContentComponent) {
+    hasNoPersons = ${!q(node).children('[instanceof Workshop.Theme:Content.Team.Item]').is()}
+
+    renderer = afx`
+        <div class='team-container'>
+            <Workshop.Theme:Content.Headline contentElement={false} />
+            <Carbon.Notification:Backend @if.render={props.hasPersons} content='Bitte Personen innerhalb dieses Containers erstellen' />
+            <Neos.Neos:ContentCollection nodePath='' attributes.class='team-container__row reveals' />
+        </div>
+    `
+}

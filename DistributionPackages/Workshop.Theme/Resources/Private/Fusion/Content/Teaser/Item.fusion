@@ -1,0 +1,7 @@
+prototype(Workshop.Theme:Content.Teaser.Item) < prototype(Workshop.Theme:Component.Teaser) {
+    contentElement = true
+    title = ${q(node).property('title')}
+    text = ${q(node).property('text')}
+    link = ${q(node).property('link')}
+    image = ${q(node).property('image')}
+}

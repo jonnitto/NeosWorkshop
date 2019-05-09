@@ -1,0 +1,23 @@
+prototype(Workshop.Theme:Content.Team.Item) < prototype(Neos.Neos:ContentComponent) {
+    title = ${q(node).property('title')}
+    role = ${q(node).property('role')}
+    mail = ${q(node).property('mail')}
+    phone = ${q(node).property('phone')}
+    phoneLink = ${this.phone}
+    phoneLink.@process.link = Carbon.Link:Telephone
+
+    renderer = afx`
+        <div class='team-item'>
+            <h3>{props.title}</h3>
+            <p class='team-item__details'>
+                <span @if.render={props.role}>{props.role}</span>
+                <span @if.render={props.mail}>
+                    <a href={'mailto:' + props.mail}>{props.mail}</a>
+                </span>
+                <span @if.render={props.phoneLink}>
+                    <a href={props.phoneLink}>{props.phone}</a>
+                </span>
+            </p>
+        </div>
+    `
+}

@@ -1,0 +1,31 @@
+{
+    "name": "jonnitto/slider",
+    "description": "Slider",
+    "type": "neos-plugin",
+    "authors": [
+        {
+            "name": "Jon Uhlmann",
+            "email": "me@jonnitto.ch",
+            "homepage": "https://www.jonnitto.ch",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Jonnitto\\Slider\\": "Classes/"
+        }
+    },
+    "require": {
+        "carbon/frontend": "^4.1.1",
+        "carbon/notification": "^1.3",
+        "carbon/eel": "^1.5",
+        "carbon/link": "^1.1.1",
+        "carbon/image": "^2.0.6",
+        "sitegeist/kaleidoscope": "^3.0"
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Jonnitto.Slider"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+'Workshop.Theme:Content.Headline':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Carbon.FirstElement:Mixin': true
+  ui:
+    label: Überschrift
+    position: 10
+    icon: 'fas fa-heading'
+  properties:
+    title:
+      options:
+        silhouette: 'text.title'
+    subtitle:
+      options:
+        silhouette: 'text.subtitle'

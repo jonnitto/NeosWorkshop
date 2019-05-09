@@ -1,0 +1,13 @@
+'Workshop.Theme:Mixin.Document':
+  abstract: true
+  superTypes:
+    'Neos.Neos:Document': true
+  properties:
+    title:
+      ui:
+        inspector:
+          position: 10
+    uriPathSegment:
+      ui:
+        inspector:
+          position: 20

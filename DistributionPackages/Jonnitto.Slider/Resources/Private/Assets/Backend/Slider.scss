@@ -1,0 +1,44 @@
+.slider-wrapper--backend {
+  overflow-x: hidden;
+
+  .slider {
+    position: relative;
+    size: 100%;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    opacity: 1;
+
+    // Make sure that the blue border
+    // from the content selection is visible
+    // padding: 9px 0;
+
+    // Hide scrollbar
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .slider__slide {
+    scroll-snap-align: center;
+    min-width: 100%;
+    flex: 0 0 100%;
+
+    // Make sure that the blue border
+    // from the content selection is visible
+    padding: 4px;
+    outline-offset: -2px;
+  }
+
+  .flickity-page-dots {
+    bottom: 4px;
+  }
+
+  .flickity-page-dots,
+  .flickity-prev-next-button {
+    z-index: 1;
+  }
+}

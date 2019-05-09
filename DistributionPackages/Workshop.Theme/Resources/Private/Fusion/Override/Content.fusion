@@ -1,0 +1,11 @@
+prototype(Neos.Neos:ContentComponent) {
+    contentElement = true
+    @context.contentElement = ${this.contentElement}
+    @process.contentElementWrapping.@if.contentElementWrapping = ${contentElement}
+}
+
+prototype(Neos.Neos:Content) {
+    contentElement = true
+    @context.contentElement = ${this.contentElement}
+    @process.contentElementWrapping.@if.contentElementWrapping = ${contentElement}
+}

@@ -1,0 +1,16 @@
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  user-select: none;
+
+  .flickity-viewport {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: grab;
+
+    &.is-pointer-down {
+      cursor: -webkit-grabbing;
+      cursor: grabbing;
+    }
+  }
+}

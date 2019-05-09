@@ -1,0 +1,44 @@
+prototype(Workshop.Theme:Component.Teaser) < prototype(Neos.Neos:ContentComponent) {
+    contentElement = false
+
+    node = null
+    link = ${this.node ? 'node://' + this.node.identifier : false}
+
+    title = null
+    text = null
+    image = null
+    alternativeText = ${this.image ? this.title : null}
+
+    namespace = null
+    width = 610
+    height = ${Math.round(this.width / 4 * 3)}
+    backendLink = false
+    renderDefaultTagIfNoLink = ${node.context.inBackend}
+
+    @if.render = ${node.context.inBackend ? this.contentElement || this.title : (this.link || this.renderDefaultTagIfNoLink) && this.title && this.image}
+
+    baseNamespace = 'teaser'
+    subnamespace = ${this.namespace ? this.namespace + '__teaser' : null}
+
+    renderer = Workshop.Theme:Component.Card {
+        renderDefaultTagIfNoLink = ${props.renderDefaultTagIfNoLink}
+        link = ${props.link}
+        backendLink = ${props.backendLink}
+        namespace = ${props.baseNamespace}
+        additionalClass = ${props.subnamespace}
+        content = afx`
+            <figure class={[BEM.string(props.subnamespace, 'figure'), BEM.string(props.baseNamespace, 'figure')]}>
+                <Workshop.Theme:Component.Image asset={props.image} width={props.width} height={props.height} allowCropping={true} alternativeText={props.alternativeText} />
+            </figure>
+            
+            <div class={[BEM.string(props.subnamespace, 'detail'), BEM.string(props.baseNamespace, 'detail')]}>
+                <h3 class={[BEM.string(props.subnamespace, 'title'), BEM.string(props.baseNamespace, 'title')]}>
+                    {props.title}
+                </h3>
+                <p class={[BEM.string(props.subnamespace, 'text'), BEM.string(props.baseNamespace, 'text')]} @if.render={props.text}>
+                    {props.text}
+                </p>
+            </div>
+        `
+    }
+}

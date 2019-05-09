@@ -1,0 +1,21 @@
+'Workshop.Theme:Content.Image':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Carbon.Image:Image': true
+    'Carbon.Image:AlternativeText': true
+    'Carbon.Image:Lightbox': true
+    'Carbon.Image:Caption': true
+    'Carbon.Image:Link': true
+    'Carbon.Image:BackendLabel': true
+  ui:
+    position: 30
+  properties:
+    breakout:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Ganze Breite nutzen'
+        reloadIfChanged: true
+        inspector:
+          group: image
+          position: 500

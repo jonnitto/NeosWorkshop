@@ -1,0 +1,42 @@
+prototype(Workshop.Theme:Content.Text) < prototype(Neos.Neos:ContentComponent) {
+    tagName = ${this.isFirstElement ? 'h1' : 'h2'}
+    subTagName = ${'h' + (String.toInteger(String.substr(this.tagName, 1)) + 1)}
+    oneRow = ${q(node).property('oneRow')}
+    title = Neos.Neos:Editable {
+        property = 'title'
+        block = false
+    }
+    subtitle = Neos.Neos:Editable {
+        property = 'subtitle'
+        block = false
+    }
+    text = Neos.Neos:Editable {
+        property = 'text'
+    }
+    text2 = Neos.Neos:Editable {
+        property = 'text2'
+    }
+
+
+    renderer = afx`
+        <div @if.set={props.text || (props.text2 && !props.oneRow)} class={'reveals text text--' + (props.oneRow ? 'single' : 'multi')}>
+            <Neos.Fusion:Tag tagName={props.tagName} attributes.class='text__title'>
+                {props.title}
+            </Neos.Fusion:Tag>
+            <Neos.Fusion:Tag tagName={props.subTagName} @if.set={props.subtitle} attributes.class='text__subtitle'>
+                {props.subtitle}
+            </Neos.Fusion:Tag>
+            <div class='text__row ' @if.render={!props.oneRow}>
+                <div @if.set={props.text} class='text__text text__text--left'>
+                    {props.text}
+                </div>
+                <div @if.set={props.text2} class='text__text text__text--right'>
+                    {props.text2}
+                </div>
+            </div>
+            <div @if.set={props.text && props.oneRow} class='text__text text__text--single'>
+                {props.text}
+            </div>
+        </div>
+    `
+}

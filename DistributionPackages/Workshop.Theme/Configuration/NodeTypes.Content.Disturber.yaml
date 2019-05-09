@@ -1,0 +1,85 @@
+'Workshop.Theme:Content.Disturber':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Carbon.FirstElement:Mixin': true
+    'Carbon.Link:Link': true
+    'Carbon.Image:Image': true
+    'Carbon.Image:BackendLabel': true
+  ui:
+    label: 'Störer mit fixierten Bild'
+    icon: 'fas fa-image'
+    group: teaser
+    inspector:
+      groups:
+        settings:
+          label: Einstellungen
+          position: 5
+          icon: 'fas fa-paint-brush'
+  properties:
+    title:
+      options:
+        silhouette: 'text.title'
+    subtitle:
+      options:
+        silhouette: 'text.subtitle'
+    text:
+      options:
+        silhouette: 'text.paragraph'
+    color:
+      type: boolean
+      ui:
+        label: 'Textfarbe dunkel'
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          position: 80
+    opacity:
+      type: integer
+      defaultValue: 40
+      ui:
+        label: 'Bild abschwächen'
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          hidden: 'ClientEval:node.properties.image ? false : true'
+          position: 90
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              0:
+                label: '0%'
+              10:
+                label: '10%'
+              20:
+                label: '20%'
+              30:
+                label: '30%'
+              40:
+                label: '40%'
+              50:
+                label: '50%'
+              60:
+                label: '60%'
+              70:
+                label: '70%'
+              80:
+                label: '80%'
+              90:
+                label: '90%'
+    link:
+      ui:
+        reloadIfChanged: true
+        inspector:
+          position: 10
+    button:
+      type: string
+      defaultValue: 'mehr Informationen'
+      ui:
+        label: 'Beschriftung Button'
+        reloadIfChanged: true
+        inspector:
+          group: link
+          hidden: 'ClientEval:node.properties.link ? false : true'
+          position: 100
+      validation:
+        'Neos.Neos/Validation/LabelValidator': []

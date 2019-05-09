@@ -1,0 +1,49 @@
+.text {
+  @include text-content;
+  @include node-spacing-top;
+  @include node-spacing-bottom;
+
+  max-width: $container-max-width-md + $grid-gutter-width;
+}
+
+.text--single {
+  max-width: 800px;
+}
+
+.text__title {
+  margin-bottom: 0;
+}
+
+h1.text__title ~ .text__row,
+h1.text__title ~ .text__text--single {
+  margin-top: 3rem;
+}
+
+h2.text__title ~ .text__row,
+h2.text__title ~ .text__text--single {
+  margin-top: 2rem;
+}
+
+.text__subtitle {
+  margin-top: 0;
+}
+
+.text__row {
+  display: grid;
+  grid-template:
+    "text-left" auto
+    "text-right" auto;
+
+  @include media-break-up(md) {
+    column-gap: 60px;
+    grid-template:
+      "text-left text-right" auto
+      / 1fr 1fr;
+  }
+}
+
+@each $area in left, right {
+  .text__text--#{$area} {
+    grid-area: text-#{$area};
+  }
+}

@@ -1,0 +1,20 @@
+prototype(Workshop.Theme:Document.Fragment.Navigation) < prototype(Neos.Fusion:Component) {
+    items = null
+    class = null
+
+    renderer = afx`
+        <Neos.Fusion:Loop items={props.items} @if.set={Type.isArray(props.items)}>
+            <Workshop.Theme:Document.Fragment.Navigation.Item item={item} class={props.class} />
+        </Neos.Fusion:Loop>
+    `
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            documentNode = ${documentNode}
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTypeTag('Neos.Neos:Document', documentNode)}
+        }
+    }
+}

@@ -1,0 +1,131 @@
+.main-element {
+  min-height: 50vh;
+}
+
+.-breakout {
+  @include breakout;
+}
+
+.main-element,
+.container {
+  @include container-xl;
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.5em x $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  font-style: $headings-font-style;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1,
+.h1 {
+  @include headings-font-size($h1-font-size, $h3-font-size);
+
+  + h2,
+  + .h2 {
+    @include headings-font-size($h2-font-size * 0.8, $h4-font-size * 0.8);
+
+    margin-top: -1.5em;
+  }
+}
+
+h2,
+.h2 {
+  @include headings-font-size($h2-font-size, $h4-font-size);
+
+  + h3,
+  + .h3 {
+    @include headings-font-size($h3-font-size * 0.8, $h5-font-size * 0.8);
+
+    margin-top: -1.5em;
+  }
+}
+
+h3,
+.h3 {
+  @include headings-font-size($h3-font-size, $h5-font-size);
+}
+
+// h4,
+// .h4 {
+//   @include headings-font-size($h4-font-size, $h6-font-size);
+// }
+
+p {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
+}
+
+.loader {
+  background: resolve("Loader.svg") center no-repeat;
+  pointer-events: none;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute 0;
+}
+
+figure {
+  margin: 0;
+  position: relative;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+  }
+}
+
+.-opaque {
+  opacity: 0;
+}
+
+.-center {
+  text-align: center;
+}
+
+noscript {
+  background: #f25648;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  padding: 4em 2em;
+  z-index: 2000;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.jonnitto-imagesinarow__image {
+  position: relative;
+}

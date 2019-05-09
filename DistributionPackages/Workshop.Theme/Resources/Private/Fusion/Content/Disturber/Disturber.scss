@@ -1,0 +1,125 @@
+$distruber-gutter-width: 30px !default;
+$distruber-spacing: 80px !default;
+$distruber-content-maxwidth: 600px !default;
+
+.main-element > .disturber:first-child {
+  min-height: 60vh;
+}
+
+.disturber {
+  @include breakout;
+
+  margin: $distruber-spacing x;
+  min-height: 40vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(#000, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: responsive 15px 20px;
+
+  &::before {
+    content: "";
+    position: absolute 0;
+    background: #000;
+    opacity: 0;
+    z-index: 0;
+  }
+
+  + .disturber {
+    margin-top: -$distruber-spacing;
+  }
+}
+
+.disturber--dark {
+  color: #000;
+  text-shadow: 0 0 15px rgba(#fff, 0.5);
+
+  &::before {
+    background: #fff;
+  }
+}
+
+@for $i from 1 through 9 {
+  .disturber--opacity-#{$i}0::before {
+    opacity: $i * 0.1;
+  }
+}
+
+.disturber__button {
+  display: inline-block;
+  margin-top: 2em;
+  max-width: $distruber-content-maxwidth;
+  background: transparent;
+  transition: background 0.2s ease, color 0.2s ease;
+  border: 1px solid #fff;
+  color: inherit;
+  padding: 0.5em 2em;
+
+  .disturber--dark & {
+    border-color: #000;
+  }
+
+  &:hover {
+    text-decoration: none;
+    background: #fff;
+    color: #000;
+
+    .disturber--dark & {
+      background: #000;
+      color: #fff;
+    }
+  }
+}
+
+.disturber__title {
+  font-weight: 300;
+  font-size: 2em;
+  margin: 0 0 1em;
+  color: inherit;
+
+  + .disturber__subtitle {
+    margin-top: -1em;
+  }
+}
+
+.disturber__subtitle {
+  font-weight: 300;
+  font-size: 1.5em;
+  color: inherit;
+  margin: 0 0 1em;
+}
+
+.disturber__title,
+.disturber__subtitle {
+  + .disturber__text {
+    margin-top: -1em;
+    padding-top: 2em;
+    border-top: 1px solid currentColor;
+  }
+}
+
+.disturber__title,
+.disturber__subtitle,
+.disturber__text > * {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.disturber__content {
+  max-width: calc(960px + 2em);
+  width: 100%;
+  margin: x auto;
+  position: relative;
+  z-index: 1;
+  padding: 4em 2em;
+
+  > div {
+    max-width: $distruber-content-maxwidth;
+  }
+}

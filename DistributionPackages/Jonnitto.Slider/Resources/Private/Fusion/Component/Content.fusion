@@ -1,0 +1,46 @@
+prototype(Jonnitto.Slider:Component.Content) < prototype(Neos.Neos:ContentComponent) {
+    contentElement = true
+    nodePath = 'slides'
+    class = null
+    options = Neos.Fusion:DataStructure
+    id = null
+    wrapper = false
+    fade = false
+    jump = false
+    noSlideWarning = false
+
+    // Internal
+    count = ${q(node).children(this.nodePath).children().count()}
+    flickity = ${this.options ? Json.stringify(this.options) : true}
+    @if.render = ${this.count || node.context.inBackend}
+
+    renderer = Neos.Fusion:Component {
+        @apply {
+            spread_1 = ${props}
+            spread_2 = Neos.Fusion:DataStructure {
+                // Apply special settings for fade
+                @if.fade = ${props.fade || props.jump}
+                options = Neos.Fusion:DataStructure {
+                    @apply.options = ${props.options}
+                    fade = true
+                    selectedAttraction = ${props.jump ? 1 : 0.2}
+                    friction = ${props.jump ? 1 : 0.8}
+                }
+            }
+        }
+        notification = afx`
+            <Carbon.Notification:Data content={props.noSlideWarning} @if.noSlides={!props.count} />
+        `
+        renderer = afx`
+            <Jonnitto.Slider:Component.Wrapper count={props.count} options={props.options} variant={props.class} onlyInBackend={!props.wrapper}>
+                <Neos.Neos:ContentCollection
+                    nodePath={props.nodePath}
+                    attributes.class={BEM.string('slider', null, ['count-' + props.count, props.class])}
+                    attributes.id={props.id}
+                    attributes.data-flickity={node.context.live ? props.flickity : false}
+                    attributes.data-carbon-warning={props.notification}
+                />
+            </Jonnitto.Slider:Component.Wrapper>
+        `
+    }
+}

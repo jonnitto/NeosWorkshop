@@ -1,0 +1,38 @@
+prototype(Workshop.Theme:Document.Base) < prototype(Neos.Fusion:Component) {
+    content = null
+    htmlTagClass = null
+    bodyClass = null
+
+    renderer = Neos.Neos:Page {
+        htmlTag.attributes {
+            data-context = ${Configuration.setting('Neos.Flow.core.context')}
+            class = Neos.Fusion:DataStructure {
+                depth = ${documentNode.depth - 2}
+                @ignoreProperties = ${['depth']}
+
+                htmlTagClass = ${props.htmlTagClass}
+                level = ${this.depth == 0 ? '-index' : '-deep' + this.depth}
+                context = ${node.context.live ? '-live' : '-backend'}
+                subpages = ${this.depth && q(node).children('[instanceof Neos.Neos:Document]').filter('[_hiddenInIndex=false]').is() ? '-hassub' : '-nosub'}
+                type = Neos.Fusion:Value {
+                    name = ${q(documentNode).property('_nodeType.name')}
+                    value = ${'-' + Carbon.String.urlize(Carbon.String.convertCamelCase(this.name))}
+                }
+            }
+        }
+        head.metadata = Workshop.Theme:Document.Fragment.MetaData
+        bodyTag.attributes.class = ${props.bodyClass}
+        body {
+            // Reset values from the Neos.Neos package
+            node = null
+            site = null
+        }
+        body = afx`
+            <Workshop.Theme:Component.Icons />
+            <noscript>{Translation.translate('noscript', null, [], null, 'Workshop.Theme')}</noscript>
+            <Workshop.Theme:Document.Fragment.Header />
+            {props.content}
+            <Workshop.Theme:Document.Fragment.Footer />
+        `
+    }
+}

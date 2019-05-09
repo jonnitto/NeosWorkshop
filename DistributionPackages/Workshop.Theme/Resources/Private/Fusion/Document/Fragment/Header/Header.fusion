@@ -1,0 +1,33 @@
+prototype(Workshop.Theme:Document.Fragment.Header) < prototype(Neos.Fusion:Component) {
+    root = ${site}
+    menuItems = Neos.Neos:MenuItems {
+        maximumLevels = 2
+    }
+    menuClass = 'mainnav'
+    contact = ${Translation.translate('contact', null, [], null, 'Workshop.Theme')}
+
+    // Internal
+    needMenu = ${this.contact || (Type.isArray(this.menuItems) && Array.length(this.menuItems))}
+
+    renderer = afx`
+        <header class="page-header">
+            <Neos.Neos:NodeLink node={props.root} attributes.class="logo-element">
+                <Workshop.Theme:Component.Icon icon='Logo' />
+            </Neos.Neos:NodeLink>
+            <nav class={props.menuClass} @if.set={props.needMenu}>
+                <ul class={BEM.string(props.menuClass, 'list', 'level1')}>
+                    <Workshop.Theme:Document.Fragment.Navigation class={props.menuClass} items={props.menuItems} />
+                    <li @if.set={props.contact} class={BEM.string(props.menuClass, 'element', 'level1')}>
+                        <a href={'#' + Carbon.String.urlize(props.contact)} class={BEM.string(props.menuClass, 'link', ['level1', 'scroll'])}>
+                            <span>{Translation.translate('contact', null, [], null, 'Workshop.Theme')}</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button type='button' class='hamburger-icon' @if.set={props.needMenu}>
+                <span>{Translation.translate('menu', null, [], null, 'Workshop.Theme')}</span>
+                <i></i>
+            </button>
+        </header>
+    `
+}

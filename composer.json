@@ -1,0 +1,37 @@
+{
+    "name": "Pirates",
+    "homepage": "https://www.fork-n-knife.com",
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "require": {
+        "neos/neos": "~4.3.0",
+        "workshop/theme": "@dev"
+    },
+    "require-dev": {
+        "carbon/gulp": "^7.4",
+        "moc/synchronizeurl": "^2.0"
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+            "if [ -f Build/Gulp/Distribution/AutoUpdate.sh ]; then sh Build/Gulp/Distribution/AutoUpdate.sh; fi"
+        ],
+        "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "gulp": "yarn start",
+        "build": "yarn build",
+        "pipeline": "yarn pipeline"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "DistributionPackages/*"
+        }
+    ],
+    "extra": {
+        "author": "Jon Uhlmann"
+    }
+}

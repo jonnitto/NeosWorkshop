@@ -1,0 +1,12 @@
+.teaser-container {
+  @include node-spacing-top;
+  @include node-spacing-bottom;
+
+  &:empty {
+    display: none;
+  }
+
+  + .teaser-container {
+    @include reset-node-spacing-top;
+  }
+}

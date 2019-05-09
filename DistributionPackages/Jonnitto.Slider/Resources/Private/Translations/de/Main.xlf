@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Jonnitto.Slider" source-language="en" target-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="pageDot" xml:space="preserve">
+                <source>Go to slide #%n</source>
+                <target>Gehe zu der %n. Slide</target>
+            </trans-unit>
+            <trans-unit id="previous" xml:space="preserve">
+                <source>Previous slide</source>
+                <target>Vorherige Slide</target>
+            </trans-unit>
+            <trans-unit id="next" xml:space="preserve">
+                <source>Next slide</source>
+                <target>Nächste Slide</target>
+            </trans-unit>
+            <trans-unit id="pageSliderTitle" xml:space="preserve">
+                <source>Slider on the top of the page</source>
+                <target>Slider am Anfang der Seite</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

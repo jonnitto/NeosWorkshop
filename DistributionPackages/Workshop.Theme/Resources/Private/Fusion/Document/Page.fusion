@@ -1,0 +1,10 @@
+prototype(Workshop.Theme:Document.Page) < prototype(Workshop.Theme:Document.Base) {
+    content = Neos.Neos:ContentCollection {
+        tagName = 'main'
+        attributes {
+            class = 'main-element'
+            aria-label = 'Content'
+        }
+        nodePath = 'main'
+    }
+}

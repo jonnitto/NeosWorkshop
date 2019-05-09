@@ -1,0 +1,12 @@
+prototype(Workshop.Theme:Document.NotFound) < prototype(Workshop.Theme:Document.Page) {
+
+    #
+    # The page that is rendered here should always return the 404 status
+    # so all crawlers will understand that this is no normal content
+    #
+    prototype(Neos.Neos:Page) {
+        httpResponseHead {
+            statusCode = 404
+        }
+    }
+}

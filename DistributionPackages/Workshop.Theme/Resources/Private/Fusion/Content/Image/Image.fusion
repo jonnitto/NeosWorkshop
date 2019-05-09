@@ -1,0 +1,14 @@
+prototype(Workshop.Theme:Content.Image) < prototype(Neos.Neos:ContentComponent) {
+    asset = ${q(node).property('image')}
+    link = ${q(node).property('link')}
+    lightbox = ${q(node).property('lightbox')}
+    breakout = ${q(node).property('breakout')}
+    alternativeText = ${q(node).property('alternativeText')}
+    maximumWidth = ${this.breakout ? 2520 : 1260}
+
+    renderer = afx`
+        <div class={['reveal', Carbon.String.BEM('image', null, props.breakout ? 'breakout' : 'content')]}>
+            <Workshop.Theme:Component.Image {...props} />
+        </div>
+    `
+}

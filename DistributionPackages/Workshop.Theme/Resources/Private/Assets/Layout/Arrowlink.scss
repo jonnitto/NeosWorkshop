@@ -1,0 +1,12 @@
+a {
+  .icon-arrow-right {
+    display: inline-block;
+    margin-right: 0.5em;
+    transform: translateY(-0.05em);
+    transition: transform 0.5s ease-out-back;
+  }
+
+  &:hover .icon-arrow-right {
+    transform: translate(0.3em, -0.05em);
+  }
+}

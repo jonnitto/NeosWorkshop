@@ -1,0 +1,78 @@
+// scss-lint:disable IdSelector
+
+@mixin iconIconLink($state: "normal", $selector: ".icon", $scale: 1.3) {
+  #{$selector} {
+    @if $state == "normal" {
+      font-size: #{$scale}em;
+      transform-origin: center;
+      transition: transform 0.35s ease-in-out;
+
+      &:first-child {
+        margin-right: 5px;
+      }
+
+      &:last-child {
+        margin-left: 5px;
+      }
+    }
+
+    @if $state == "hover" {
+      &:first-child {
+        transform: translateX(-2px);
+      }
+
+      &:last-child {
+        transform: translateX(2px);
+      }
+    }
+
+    @if $state == "active" {
+      &:first-child {
+        transform: translateX(-4px);
+      }
+
+      &:last-child {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+.icon {
+  fill: currentColor;
+  size: 1em;
+}
+
+.-stroke {
+  fill: none;
+  stroke: currentColor;
+}
+
+.-iconlink {
+  @include iconIconLink;
+
+  display: inline-flex;
+  align-items: center;
+
+  &:hover,
+  &:focus {
+    @include iconIconLink($state: "hover", $selector: ".icon-arrow-circle, .icon-arrow-circle-back");
+  }
+
+  &:active {
+    @include iconIconLink($state: "active", $selector: ".icon-arrow-circle, .icon-arrow-circle-back");
+  }
+}
+
+a {
+  &:hover,
+  &:focus {
+    .-iconlink {
+      @include iconIconLink($state: "hover");
+    }
+  }
+
+  &:active .-iconlink {
+    @include iconIconLink($state: "active");
+  }
+}

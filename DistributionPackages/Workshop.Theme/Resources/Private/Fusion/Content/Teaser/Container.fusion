@@ -1,0 +1,44 @@
+prototype(Workshop.Theme:Content.Teaser.Container) < prototype(Neos.Neos:ContentCollection) {
+    baseWidth = 1440
+    nodePath = ''
+
+    childCount = ${q(node).children('[instanceof Workshop.Theme:Content.Teaser.Item]').count()}
+    dimensionsWidth = ${this.childCount ? this.baseWidth / this.childCount : this.baseWidth}
+
+    contentElement = true
+    namespace = 'teaser-container'
+
+    @context {
+        container = ${this.container}
+        childCount = ${this.childCount}
+        dimensionsWidth = ${this.dimensionsWidth}
+        contentElement = ${this.contentElement}
+        namespace = ${this.namespace}
+    }
+
+    attributes.class = Neos.Fusion:RawArray {
+        namespace = ${node.context.inBackend ? false : namespace}
+        card = 'card-container'
+        row = ${namespace + '__row'}
+        type = ${namespace + '__row--dynamic'}
+        reveals = 'reveals'
+    }
+
+    @process {
+        noChildren = Carbon.Notification:Backend {
+            @if.render = ${!childCount}
+            content = 'Bitte Teaser innerhalb dieses Containers erstellen'
+        }
+        containerWrapping = Neos.Fusion:Tag {
+            @if.needWrapping = ${node.context.inBackend}
+            attributes.class = ${namespace}
+            content = ${value}
+        }
+        contentElementWrapping {
+            @if.contentElementWrapping = ${contentElement}
+            expression = Neos.Neos:ContentElementWrapping
+            @position = 'end 999999999'
+        }
+    }
+    @exceptionHandler = 'Neos\\Neos\\Fusion\\ExceptionHandlers\\NodeWrappingHandler'
+}

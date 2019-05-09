@@ -1,0 +1,23 @@
+.image {
+  @include node-spacing-bottom;
+
+  display: block;
+  position: relative;
+}
+
+.text--single {
+  + .image--content,
+  + .image + .image--content,
+  + .image + .image + .image--content {
+    max-width: 50em;
+  }
+}
+
+.image--breakout {
+  @include breakout;
+}
+
+.image--content {
+  max-width: $container-max-width-md;
+  margin: x auto;
+}

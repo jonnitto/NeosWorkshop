@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Workshop.Theme" source-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="label" xml:space="preserve">
+                <source>Ausrichtung</source>
+            </trans-unit>
+            <trans-unit id="vertical" xml:space="preserve">
+                <source>Vertikale Ausrichtung</source>
+            </trans-unit>
+            <trans-unit id="horizontal" xml:space="preserve">
+                <source>Horizontale Ausrichtung</source>
+            </trans-unit>
+            <trans-unit id="placeholder" xml:space="preserve">
+                <source>Standard</source>
+            </trans-unit>
+            <trans-unit id="left" xml:space="preserve">
+                <source>Links</source>
+            </trans-unit>
+            <trans-unit id="right" xml:space="preserve">
+                <source>Rechts</source>
+            </trans-unit>
+            <trans-unit id="top" xml:space="preserve">
+                <source>Oben</source>
+            </trans-unit>
+            <trans-unit id="bottom" xml:space="preserve">
+                <source>Unten</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

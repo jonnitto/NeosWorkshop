@@ -1,0 +1,22 @@
+.team-container {
+  @include node-spacing-top;
+  @include node-spacing-bottom;
+
+  max-width: $container-max-width-xs;
+  margin: x auto;
+
+  &:empty {
+    display: none;
+  }
+
+  + .team-container {
+    @include reset-node-spacing-top;
+  }
+}
+
+.team-container__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: x $grid-gutter-width / -2;
+}

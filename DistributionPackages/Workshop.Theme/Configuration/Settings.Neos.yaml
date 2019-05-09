@@ -1,0 +1,99 @@
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'Neos.Neos':
+          variables:
+            defaultUriSuffix: ''
+    i18n:
+      defaultLocale: de
+  Neos:
+    Ui:
+      frontendConfiguration:
+        hotkeys: ~
+        defaultInlineEditor: 'ckeditor5'
+    routing:
+      supportEmptySegmentForDimensions: true
+    nodeTypes:
+      groups:
+        teaser:
+          position: 500
+          label: 'Workshop.Theme:NodeTypes.Groups:teaser'
+          collapsed: false
+        gallery:
+          position: 600
+          label: 'Workshop.Theme:NodeTypes.Groups:gallery'
+          collapsed: false
+        form:
+          position: 1200
+          label: 'Workshop.Theme:NodeTypes.Groups:form'
+        special:
+          position: 8000
+          label: 'Workshop.Theme:NodeTypes.Groups:special'
+          collapsed: true
+        system:
+          position: 9000
+          label: 'Workshop.Theme:NodeTypes.Groups:system'
+          collapsed: true
+    userInterface:
+      defaultLanguage: de
+      navigateComponent:
+        nodeTree:
+          loadingDepth: 1
+        structureTree:
+          loadingDepth: 0
+      editPreviewModes:
+        tabletLandscape:
+          # based on most used device 2017
+          isEditingMode: false
+          isPreviewMode: true
+          fusionRenderingPath: ''
+          title: 'Workshop.Theme:NodeTypes.PreviewModes:tabletLandscape'
+          width: 1024
+          height: 768
+          backgroundColor: '#222'
+        tabletPortrait:
+          # based on most used device 2017
+          isEditingMode: false
+          isPreviewMode: true
+          fusionRenderingPath: ''
+          title: 'Workshop.Theme:NodeTypes.PreviewModes:tabletPortrait'
+          width: 768
+          height: 1024
+          backgroundColor: '#222'
+        mobile:
+          # based on most used 2017 virtual screensize - https://deviceatlas.com/blog/mobile-viewport-size-statistics-2017
+          isEditingMode: false
+          isPreviewMode: true
+          fusionRenderingPath: ''
+          title: 'Workshop.Theme:NodeTypes.PreviewModes:mobile'
+          width: 360
+          height: 640
+          backgroundColor: '#222'
+      translation:
+        autoInclude:
+          'Workshop.Theme':
+            - '*'
+            - 'NodeTypes/*'
+    fusion:
+      autoInclude:
+        'Workshop.Theme': true
+  ContentRepository:
+    contentDimensions:
+      language:
+        default: de
+        defaultPreset: de
+        label: Sprache
+        icon: icon-language
+        presets:
+          de:
+            label: Deutsch
+            values:
+              - de
+            uriSegment: ''
+
+Flowpack:
+  NodeTemplates:
+    defaultEelContext:
+      Carbon.Array: 'Carbon\Eel\ArrayHelper'
+      Carbon.String: 'Carbon\Eel\StringHelper'

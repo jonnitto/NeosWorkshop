@@ -1,0 +1,12 @@
+prototype(Workshop.Theme:Component.Icon) < prototype(Neos.Fusion:Component) {
+    icon = null
+    base = 'icon'
+    class = ${this.base + ' ' + this.base + '-' + this.icon}
+
+    @if.set = ${this.icon}
+    renderer = afx`
+        <svg class={String.toLowercase(String.trim(props.class))}>
+            <use xlink:href={'#icon-' + String.toLowercase(props.icon)}></use>
+        </svg>
+    `
+}

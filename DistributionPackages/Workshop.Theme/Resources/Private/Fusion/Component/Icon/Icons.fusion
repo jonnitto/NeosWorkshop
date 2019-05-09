@@ -1,0 +1,14 @@
+prototype(Workshop.Theme:Component.Icons) < prototype(Neos.Fusion:Component) {
+    path = 'resource://Workshop.Theme/Private/Templates/InlineAssets/Sprite.svg'
+    addStrockeClass = true
+    removeColors = true
+
+
+    @if.set = ${this.path}
+    renderer = ${Carbon.FileContent.path(props.path)}
+    renderer.@process {
+        addStrockeClass = ${props.addStrockeClass ? String.pregReplace(value, '/(?>\sstroke="[#\w]*")/', ' class="-stroke"') : value}
+        removeColors = ${props.removeColors ? String.pregReplace(value, '/(?>\s(?>fill|stroke)="[#\w]*")/', '') : value}
+        addClass = ${props.class ? String.replace(value, '<svg', '<svg class="' + props.class + '"') : value}
+    }
+}

@@ -1,0 +1,111 @@
+// prettier-ignore
+$hamburger: (
+  class: hamburger-icon,
+  open: -menuopen,
+  breakpoint: $navigation-breakpoint,
+  size: 44px,
+  font-size: 1.5rem,
+  color: currentColor,
+  placement: right,
+  text-size: 1rem
+) !default;
+
+.#{map-get($hamburger, class)} {
+  $opertator: -1;
+
+  @if map-get($hamburger, placement) == left {
+    $opertator: 1;
+  }
+
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  size: map-get($hamburger, size);
+  font-size: map-get($hamburger, font-size);
+  padding: 0;
+  cursor: pointer;
+  color: map-get($hamburger, color);
+
+  @include media-break-up(map-get($hamburger, breakpoint)) {
+    display: none;
+  }
+
+  span {
+    position: absolute;
+    line-height: 0;
+    right: 3em;
+    top: 50%;
+    bottom: 0;
+    font-size: map-get($hamburger, text-size);
+
+    @include media-break-down(break-prev(break-prev(map-get($hamburger, breakpoint)))) {
+      font-size: 0;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    width: 1em;
+  }
+
+  &::before,
+  &::after,
+  i {
+    position: absolute;
+    top: 50%;
+    display: block;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.4s ease-in-out-circ;
+    will-change: transform;
+
+    @if map-get($hamburger, placement) == right {
+      left: 50%;
+    } @else {
+      right: 50%;
+    }
+  }
+
+  &::before {
+    transform: translate(50% * $opertator, -0.25em);
+  }
+
+  &::after {
+    transform: translate(50% * $opertator, 0.25em);
+  }
+
+  i {
+    width: 0.7em;
+    transform: translateX(0.5em * $opertator);
+  }
+
+  &:hover i {
+    transform: translateX(0.2em * $opertator);
+  }
+
+  &:active,
+  .#{map-get($hamburger, open)} & {
+    &::before {
+      transform: translateX(50% * $opertator) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translateX(50% * $opertator) rotate(45deg);
+    }
+
+    i {
+      transform: translateX(-5em * $opertator);
+    }
+  }
+
+  &:hover {
+    outline: none;
+  }
+
+  @include keyboard-focus-shadow;
+}

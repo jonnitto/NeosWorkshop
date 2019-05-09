@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" preserveAspectRatio="xMidYMid" viewBox="0 0 100 100">
+    <path fill="#970C1D" stroke="none" d="M10 50A40 40 0 0 0 90 50A40 44 0 0 1 10 50" transform="rotate(239.587 50 52)">
+        <animateTransform attributeName="transform" begin="0s" calcMode="linear" dur="1s" keyTimes="0;1" repeatCount="indefinite" type="rotate" values="0 50 52;360 50 52"/>
+    </path>
+</svg>

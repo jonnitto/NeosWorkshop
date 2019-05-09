@@ -1,0 +1,49 @@
+prototype(Workshop.Theme:Document.Fragment.Footer) < prototype(Neos.Fusion:Component) {
+    address = ${q(site).property('address')}
+    phone = ${q(site).property('phone')}
+    mail = ${q(site).property('mail')}
+    menuItems = Neos.Neos:MenuItems {
+        itemCollection = ${q(node).closest('[navigationreferences]').property('navigationreferences')}
+    }
+    contact = ${Translation.translate('contact', null, [], null, 'Workshop.Theme')}
+
+
+    // Internal
+    phoneLink = ${this.phone}
+    phoneLink.@process.formatNumber = Carbon.Link:Telephone
+    addressArray = ${this.address ? String.pregSplit(String.trim(this.address), '/\n/') : []}
+
+    renderer = afx`
+        <footer class="footer" id={Carbon.String.urlize(props.contact)}>
+            <p class="footer__info" @if.render={props.addressArray}>
+                <Neos.Fusion:Loop items={props.addressArray}>
+                    <strong @if.isFirst={iterator.isFirst}>{item}</strong>
+                    <span @if.isNotFirst={!iterator.isFirst}>{item}</span>
+                </Neos.Fusion:Loop>
+            </p>
+            <p class="footer__info" @if.render={props.phone || props.fax || props.mail}>
+                <span @if.render={props.phone}>
+                    T: <a href={props.phoneLink}>{props.phone}</a>
+                </span>
+                <span @if.render={props.mail}>
+                    M: <a href={'mailto:' + props.mail}>{props.mail}</a>
+                </span>
+            </p>
+            <nav class="footer-nav" @if.set={Type.isArray(props.menuItems) && Arrray.length(props.menuItems)}>
+                <ul class="footer-nav__list">
+                    <Neos.Fusion:Loop items={props.menuItems}>
+                        <li class="footer-nav__element">
+                            <Neos.Neos:NodeLink
+                                node={item.node}
+                                attributes.class={BEM.string('footer-nav', 'link', item.state != 'normal' && item.state)}
+                            >
+                                {item.label}
+                            </Neos.Neos:NodeLink>
+                        </li>
+                    </Neos.Fusion:Loop>
+                </ul>
+            </nav>
+        </footer>
+    `
+}
+

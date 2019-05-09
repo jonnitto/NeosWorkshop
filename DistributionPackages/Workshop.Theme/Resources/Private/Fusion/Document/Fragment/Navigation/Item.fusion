@@ -1,0 +1,28 @@
+prototype(Workshop.Theme:Document.Fragment.Navigation.Item) < prototype(Neos.Fusion:Component) {
+    class = null
+    item = null
+
+    // Internal
+    @if.set = ${this.item}
+    level = ${'level' + this.item.menuLevel}
+    nextLevel = ${'level' + (this.item.menuLevel + 1)}
+    sub = ${this.item.subItems ? 'hassub' : 'nosub'}
+    active = ${this.item.state == 'active' && 'active'}
+    current = ${this.item.state == 'current' && 'current'}
+
+    renderer = afx`
+        <li class={BEM.string(props.class, 'element', [props.level, props.sub])}>
+            <Neos.Neos:NodeLink
+                node={props.item.node} 
+                attributes.class={BEM.string(props.class, 'link', [props.level, props.active, props.current])}
+            >
+                <span>{props.item.label}</span>
+            </Neos.Neos:NodeLink>
+            <ul class={BEM.string(props.class, 'list', props.nextLevel)} @if.has={props.item.subItems}>
+                <Neos.Fusion:Loop items={props.item.subItems}>
+                    <Workshop.Theme:Document.Fragment.Navigation.Item item={item} class={props.class} />
+                </Neos.Fusion:Loop>
+            </ul>
+        </li>
+    `
+}

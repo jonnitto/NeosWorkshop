@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <site name="Pirates" state="1" siteResourcesPackageKey="Workshop.Theme" siteNodeName="pirates">
+  <nodes formatVersion="2.0">
+   <node identifier="503fd9f6-93ce-41c8-8818-9905d90ca73a" nodeName="pirates">
+    <variant sortingIndex="100" workspace="live" nodeType="Workshop.Theme:Document.Home" version="1" removed="" hidden="" hiddenInIndex="">
+     <dimensions>
+      <language>de</language>
+     </dimensions>
+     <accessRoles __type="array"/>
+     <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</creationDateTime>
+     <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</lastModificationDateTime>
+     <properties>
+      <uriPathSegment __type="string">pirates</uriPathSegment>
+      <title __type="string">Pirates</title>
+     </properties>
+    </variant>
+    <node identifier="4bae6c85-ba85-93c2-c4c7-c3c71905ed1b" nodeName="imprint">
+     <variant sortingIndex="200" workspace="live" nodeType="Workshop.Theme:Document.Meta" version="2" removed="" hidden="" hiddenInIndex="1">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:39:09+02:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-08T19:39:09+02:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">impressum</uriPathSegment>
+       <title __type="string">Impressum</title>
+      </properties>
+     </variant>
+     <node identifier="8eb7603c-d0c9-9178-07c3-944daea3290a" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</lastModificationDateTime>
+       <properties/>
+      </variant>
+     </node>
+    </node>
+    <node identifier="93f6d2ac-89c3-ced8-afa7-d8308210f8fe" nodeName="main">
+     <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</lastModificationDateTime>
+      <properties/>
+     </variant>
+     <node identifier="8b43bc21-282c-4dda-9556-0a8e91adfa99" nodeName="node-9cjrdvhacsk0g">
+      <variant sortingIndex="150" workspace="live" nodeType="Workshop.Theme:Content.Text" version="9" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-09T07:25:45+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:50:16+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T07:26:08+02:00</lastPublicationDateTime>
+       <properties>
+        <text __type="string">&lt;p&gt;Das hier ist der nützlichste und klügste Blindtext der ganzen Welt, weil er dir genau sagt, wann 100 Zeichen vorbei sind (gleich nach der Zahl). Kaum begreift man das Prinzip, zählt der Text schon 200 Zeichen, inklusive Leerschläge. Damit hast du nun eine geniale Methode zur Hand, einen Text von 300 Zeichen Länge zu visualisieren. Mal angenommen, du willst sehen, welch ansprechenden Textkörper 400 Zeichen bilden können – jetzt hast du ein Mass dafür.&amp;nbsp;&lt;/p&gt;</text>
+        <text2 __type="string">&lt;p&gt;Und nachdem dieser amüsante Blindtext mit 500 Zeichen die Hälfte erreicht hat, könnte man eine Betrachtung anstellen, die sich schon über die 600er Marke hinaus erstreckt: Haben wir es hier wirklich mit Blindtext zu tun, oder könnte man nach 700 präzis getexteten Zeichen nicht schon von Content sprechen? Mit dieser Frage überrollen wir die 800-Zeichen-Grenze und bedanken uns herzlich, dass du diesen vermeintlich blinden Text von mehr als 900 Zeichen Länge tatsächlich gelesen hast. Damit setzen wir den Schlusspunkt, und zwar hinter die 999.&lt;/p&gt;</text2>
+        <title __type="string">Headline</title>
+        <subtitle __type="string">Subtitle</subtitle>
+        <oneRow __type="boolean"></oneRow>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="2c347343-7754-48e9-9021-f1e877da2788" nodeName="node-bnnhjj7ytsirh">
+      <variant sortingIndex="100" workspace="live" nodeType="Workshop.Theme:Content.Headline" version="5" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-09T07:09:38+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:32:40+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T09:32:39+02:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">Headline</title>
+        <subtitle __type="string">Lorem ipsum</subtitle>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="beefc044-708a-4bef-9fa0-ced0db017b05" nodeName="node-k4mgqrn48hx9g">
+      <variant sortingIndex="300" workspace="live" nodeType="Workshop.Theme:Content.Disturber" version="10" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-09T08:21:30+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T08:25:56+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T08:25:56+02:00</lastPublicationDateTime>
+       <properties>
+        <opacity __type="integer">40</opacity>
+        <button __type="string">mehr Informationen</button>
+        <title __type="string">Headline</title>
+        <subtitle __type="string">Subheadline</subtitle>
+        <text __type="string">&lt;p&gt;Das hier ist der nützlichste und klügste Blindtext der ganzen Welt, weil er dir genau sagt, wann 100 Zeichen vorbei sind (gleich nach der Zahl). Kaum begreift man das Prinzip, zählt der Text schon 200 Zeichen, inklusive Leerschläge. Damit hast du nun eine geniale Methode zur Hand, einen Text von 300 Zeichen Länge zu visualisieren. Mal angenommen, du willst sehen, welch ansprechenden Textkörper 400 Zeichen bilden können – jetzt hast du ein Mass dafür. Und nachdem dieser amüsante Blindtext mit 500 Zeichen die Hälfte erreicht hat, könnte man eine Betrachtung anstellen, die sich schon über die 600er Marke hinaus erstreckt: Haben wir es hier wirklich mit Blindtext zu tun, oder könnte man nach 700 präzis getexteten Zeichen nicht schon von Content sprechen? Mit dieser Frage überrollen wir die 800-Zeichen-Grenze und bedanken uns herzlich, dass du diesen vermeintlich blinden Text von mehr als 900 Zeichen Länge tatsächlich gelesen hast. Damit setzen wir den Schlusspunkt, und zwar hinter die 999.&lt;/p&gt;</text>
+        <image __type="object" __identifier="8599c80d-d4d3-477f-9791-e38b16d5e144" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;8599c80d-d4d3-477f-9791-e38b16d5e144&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;Pink toned thoughts on a hike \u2014\r\nEverything comes in waves,\r\neven mountains.&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;pink-toned-thoughts-on-a-hike-everything-comes-in-waves-even-mountains.jpg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;4cfbfe892e77ca974e199cf447c5fd7f12fdd6cc&quot;,&quot;hash&quot;:&quot;4cfbfe892e77ca974e199cf447c5fd7f12fdd6cc&quot;,&quot;__identity&quot;:&quot;61d2fa25-039e-4f3f-b617-179d2e8932a7&quot;}}</image>
+        <link __type="string">node://820954e4-edea-325f-a74c-9af62775472c</link>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="b65ff2fd-30d7-4455-ab90-e2e186051c2b" nodeName="node-lfh2cf4pyv8io">
+      <variant sortingIndex="200" workspace="live" nodeType="Workshop.Theme:Content.Teaser.Container" version="3" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-09T08:39:35+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T08:40:13+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T08:40:12+02:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="2385698a-b6be-473d-982e-bb2818716b7a" nodeName="node-18gjgo64cfmb9">
+       <variant sortingIndex="100" workspace="live" nodeType="Workshop.Theme:Content.Teaser.Item" version="4" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>de</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2019-05-09T08:39:51+02:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:33:38+02:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T09:33:38+02:00</lastPublicationDateTime>
+        <properties>
+         <title __type="string">Titel</title>
+         <text __type="string">Untertitel</text>
+         <link __type="string">node://4bae6c85-ba85-93c2-c4c7-c3c71905ed1b</link>
+        </properties>
+       </variant>
+      </node>
+     </node>
+     <node identifier="9956839e-739f-4470-9fcd-9578d7663042" nodeName="node-m01lwqvwqgqat">
+      <variant sortingIndex="250" workspace="live" nodeType="Workshop.Theme:Content.Standout" version="9" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-09T07:45:50+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:50:16+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T07:46:20+02:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">Headline</title>
+        <text __type="string">&lt;p&gt;Das hier ist der nützlichste und klügste Blindtext der ganzen Welt, weil er dir genau sagt, wann 100 Zeichen vorbei sind (gleich nach der Zahl). Kaum begreift man das Prinzip, zählt der Text schon 200 Zeichen, inklusive Leerschläge. Damit hast du nun eine geniale Methode zur Hand, einen Text von 300 Zeichen Länge zu visualisieren. Mal angenommen, du willst sehen, welch ansprechenden Textkörper 400 Zeichen bilden können – jetzt hast du ein Mass dafür. Und nachdem dieser amüsante Blindtext mit 500 Zeichen die Hälfte erreicht hat, könnte man eine Betrachtung anstellen, die sich schon über die 600er Marke hinaus erstreckt: Haben wir es hier wirklich mit Blindtext zu tun, oder könnte man nach 700 präzis getexteten Zeichen nicht schon von Content sprechen? Mit dieser Frage überrollen wir die 800-Zeichen-Grenze und bedanken uns herzlich, dass du diesen vermeintlich blinden Text von mehr als 900 Zeichen Länge tatsächlich gelesen hast. Damit setzen wir den Schlusspunkt, und zwar hinter die 999.&lt;/p&gt;</text>
+        <image __type="object" __identifier="7eecf79f-6fa2-496a-b4d3-380743843bda" __classname="Neos\Media\Domain\Model\Image" __encoding="json">{&quot;__identity&quot;:&quot;7eecf79f-6fa2-496a-b4d3-380743843bda&quot;,&quot;__type&quot;:&quot;Neos\\Media\\Domain\\Model\\Image&quot;,&quot;title&quot;:&quot;Minimal pencils on yellow&quot;,&quot;resource&quot;:{&quot;filename&quot;:&quot;minimal-pencils-on-yellow.jpg&quot;,&quot;collectionName&quot;:&quot;persistent&quot;,&quot;relativePublicationPath&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;image\/jpeg&quot;,&quot;sha1&quot;:&quot;920fcf8b18d0a4211bd236d9c161d064efda4747&quot;,&quot;hash&quot;:&quot;920fcf8b18d0a4211bd236d9c161d064efda4747&quot;,&quot;__identity&quot;:&quot;3ef13219-a544-4969-8a0f-6f7b9d7e0277&quot;}}</image>
+        <lightbox __type="boolean"></lightbox>
+       </properties>
+      </variant>
+     </node>
+     <node identifier="ff53864e-ceed-42b0-a466-3b8527ba2c09" nodeName="node-opfia3e88xqvb">
+      <variant sortingIndex="350" workspace="live" nodeType="Workshop.Theme:Content.Team.Container" version="4" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-09T08:28:40+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:34:27+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T09:34:27+02:00</lastPublicationDateTime>
+       <properties>
+        <title __type="string">Team</title>
+       </properties>
+      </variant>
+      <node identifier="e64dab16-cbd8-4b73-89a8-fe5490176f87" nodeName="node-cn4dgp4t25our">
+       <variant sortingIndex="250" workspace="live" nodeType="Workshop.Theme:Content.Team.Item" version="3" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>de</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2019-05-09T09:33:59+02:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:34:02+02:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T09:34:02+02:00</lastPublicationDateTime>
+        <properties>
+         <title __type="string">Karsten</title>
+        </properties>
+       </variant>
+      </node>
+      <node identifier="08ae607b-4089-4fa2-8082-fc33efa0f40d" nodeName="node-umvwqrjfwzdu0">
+       <variant sortingIndex="100" workspace="live" nodeType="Workshop.Theme:Content.Team.Item" version="6" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>de</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2019-05-09T08:28:41+02:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:34:21+02:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T09:34:21+02:00</lastPublicationDateTime>
+        <properties>
+         <title __type="string">Jon</title>
+         <phone __type="string">+43 664 883 95166</phone>
+         <mail __type="string">me@jonnitto.ch</mail>
+        </properties>
+       </variant>
+      </node>
+      <node identifier="82f8bb62-43af-4181-8da7-ca5781718c25" nodeName="node-w5ukimft0k7nl">
+       <variant sortingIndex="200" workspace="live" nodeType="Workshop.Theme:Content.Team.Item" version="5" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>de</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2019-05-09T08:28:41+02:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:34:02+02:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T09:34:02+02:00</lastPublicationDateTime>
+        <properties>
+         <title __type="string">Sebastian</title>
+        </properties>
+       </variant>
+      </node>
+     </node>
+    </node>
+    <node identifier="63b05e4b-00db-410b-b51f-31bf8b4f9f49" nodeName="node-fzbfhw5n2gfzu">
+     <variant sortingIndex="150" workspace="live" nodeType="Workshop.Theme:Document.Page" version="3" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:07+02:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:28+02:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:28+02:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">ueber-uns</uriPathSegment>
+       <title __type="string">Über uns</title>
+      </properties>
+     </variant>
+     <node identifier="4904d6de-923e-d065-9a80-d2274a770c35" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:07+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:28+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:28+02:00</lastPublicationDateTime>
+       <properties/>
+      </variant>
+     </node>
+     <node identifier="455a21b5-1900-434d-a665-33b59d0f4490" nodeName="node-rbvaleyan10wn">
+      <variant sortingIndex="200" workspace="live" nodeType="Workshop.Theme:Document.Page" version="2" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:23+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:25+02:00</lastModificationDateTime>
+       <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:25+02:00</lastPublicationDateTime>
+       <properties>
+        <uriPathSegment __type="string">unterseite</uriPathSegment>
+        <title __type="string">Unterseite</title>
+       </properties>
+      </variant>
+      <node identifier="4f5e7a19-0eb6-8e3c-362b-1c1684ac27ce" nodeName="main">
+       <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="2" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>de</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:23+02:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:25+02:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-08T19:44:25+02:00</lastPublicationDateTime>
+        <properties/>
+       </variant>
+      </node>
+     </node>
+    </node>
+    <node identifier="820954e4-edea-325f-a74c-9af62775472c" nodeName="notfound">
+     <variant sortingIndex="400" workspace="live" nodeType="Workshop.Theme:Document.NotFound" version="5" removed="" hidden="" hiddenInIndex="1">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:57:55+02:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T09:57:55+02:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">404</uriPathSegment>
+       <title __type="string">404</title>
+       <metaRobotsNoindex __type="boolean">1</metaRobotsNoindex>
+      </properties>
+     </variant>
+     <node identifier="f459e17c-5ee4-46ab-9df9-0c5aedd0db81" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</lastModificationDateTime>
+       <properties/>
+      </variant>
+      <node identifier="87b6c5e7-e05b-4a2e-8678-b8ece85c1be3" nodeName="node-bvjfuhczige8z">
+       <variant sortingIndex="100" workspace="live" nodeType="Workshop.Theme:Content.Headline" version="4" removed="" hidden="" hiddenInIndex="">
+        <dimensions>
+         <language>de</language>
+        </dimensions>
+        <accessRoles __type="array"/>
+        <creationDateTime __type="object" __classname="DateTime">2019-05-09T09:53:41+02:00</creationDateTime>
+        <lastModificationDateTime __type="object" __classname="DateTime">2019-05-09T09:54:03+02:00</lastModificationDateTime>
+        <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-09T09:54:03+02:00</lastPublicationDateTime>
+        <properties>
+         <title __type="string">Aaaarrr – 404</title>
+         <subtitle __type="string">Die Seite wurde nicht gefunden</subtitle>
+        </properties>
+       </variant>
+      </node>
+     </node>
+    </node>
+    <node identifier="3c1a1e7d-446c-e9e3-cae6-798844691aca" nodeName="privacy">
+     <variant sortingIndex="300" workspace="live" nodeType="Workshop.Theme:Document.Meta" version="2" removed="" hidden="" hiddenInIndex="1">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:39:33+02:00</lastModificationDateTime>
+      <lastPublicationDateTime __type="object" __classname="DateTime">2019-05-08T19:39:33+02:00</lastPublicationDateTime>
+      <properties>
+       <uriPathSegment __type="string">datenschutzerklaerung</uriPathSegment>
+       <title __type="string">Datenschutzerklärung</title>
+      </properties>
+     </variant>
+     <node identifier="abd3a10f-e993-c005-91a3-f3bb4b053961" nodeName="main">
+      <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
+       <dimensions>
+        <language>de</language>
+       </dimensions>
+       <accessRoles __type="array"/>
+       <creationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</creationDateTime>
+       <lastModificationDateTime __type="object" __classname="DateTime">2019-05-08T19:38:51+02:00</lastModificationDateTime>
+       <properties/>
+      </variant>
+     </node>
+    </node>
+   </node>
+  </nodes>
+ </site>
+</root>

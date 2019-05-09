@@ -1,0 +1,28 @@
+'Workshop.Theme:Document.NotFound':
+  superTypes:
+    'Workshop.Theme:Mixin.Document': true
+    'Workshop.Theme:Mixin.MainContentCollection': true
+    'Workshop.Theme:Constraint.Document.NoSubDocument': true
+    'Workshop.Theme:Constraint.Document.Restricted': true
+  ui:
+    position: 999
+    group: system
+    label: '404'
+    icon: 'fas fa-times-circle'
+  properties:
+    title:
+      defaultValue: 'Not Found'
+    uriPathSegment:
+      defaultValue: 'notfound'
+    _hiddenInIndex:
+      defaultValue: true
+      ui:
+        inspector:
+          editorOptions:
+            disabled: true
+    metaRobotsNoindex:
+      defaultValue: true
+      ui:
+        inspector:
+          editorOptions:
+            disabled: true

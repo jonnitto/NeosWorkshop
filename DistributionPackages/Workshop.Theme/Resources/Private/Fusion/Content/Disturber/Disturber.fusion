@@ -1,0 +1,49 @@
+prototype(Workshop.Theme:Content.Disturber) < prototype(Neos.Neos:ContentComponent) {
+    asset = ${q(node).property('image')}
+    opacity = ${q(node).property('opacity')}
+    color = ${q(node).property('color')}
+    button = ${q(node).property('button')}
+    link = ${q(node).property('link')}
+
+
+    renderer = Neos.Fusion:Component {
+        @if.render = ${props.asset || node.context.inBackend}
+        @apply.props = ${props}
+        showButton = ${props.link && props.button}
+
+        title = Neos.Neos:Editable {
+            property = 'title'
+            class = 'disturber__title'
+        }
+
+        subtitle = Neos.Neos:Editable {
+            property = 'subtitle'
+            class = 'disturber__subtitle'
+        }
+
+        text = Neos.Neos:Editable {
+            property = 'text'
+        }
+
+        renderer = afx`
+            <Carbon.Image:Background
+                class={BEM.string('disturber', null, ['opacity-' + props.opacity, props.color ? 'dark' : null])}
+                asset={props.asset}>
+                <div @if.render={props.title || props.text || props.showButton} class='disturber__content'>
+                    <div @if.render={props.title || props.text} class='reveals'>
+                        <Neos.Fusion:Tag @if.set={props.title} tagName={props.isFirstElement ? 'h1' : 'h2'} attributes.class='disturber__title'>
+                            {props.title}
+                        </Neos.Fusion:Tag>
+                        <Neos.Fusion:Tag @if.set={props.subtitle} tagName={props.isFirstElement ? 'h2' : 'h3'} attributes.class='disturber__subtitle'>
+                            {props.subtitle}
+                        </Neos.Fusion:Tag>
+                        <div @if.set={props.text} class='disturber__text'>
+                            {props.text}
+                        </div>
+                    </div>
+                    <Carbon.Link:Link link={props.link} additionalClass='disturber__button' content={props.button} />
+                </div>
+            </Carbon.Image:Background>
+        `
+    }
+}

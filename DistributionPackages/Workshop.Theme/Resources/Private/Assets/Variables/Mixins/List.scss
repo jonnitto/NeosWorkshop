@@ -1,0 +1,17 @@
+@mixin li-point($left: 0) {
+  padding-left: calc(20px + #{$left});
+
+  &::before {
+    content: "";
+    size: 7px;
+    display: block;
+    position: absolute;
+    border: 1px solid currentColor;
+    border-bottom: none;
+    border-left: none;
+    transform: translateY(-50%) rotate(45deg);
+    left: $left;
+    top: 50%;
+    transition: transform 0.2s ease;
+  }
+}

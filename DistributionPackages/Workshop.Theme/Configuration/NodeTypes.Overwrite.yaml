@@ -1,0 +1,21 @@
+'Neos.Neos:PluginView':
+  abstract: true
+
+'Neos.Neos:Node':
+  options:
+    fusion:
+      prototypeGenerator: ~
+
+'Neos.Neos:Document':
+  options:
+    fusion:
+      prototypeGenerator: ~
+
+'Neos.Neos:Content':
+  options:
+    fusion:
+      prototypeGenerator: ~
+
+'Neos.Neos:Shortcut':
+  properties:
+    titleOverride: []

@@ -1,0 +1,83 @@
+'Workshop.Theme:Content.Teaser.Container':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.Neos:ContentCollection': true
+  label: "${(q(node).children().count() ? q(node).children().count() + ' ' : '') + (I18n.translate(node.nodeType.label) || node.nodeType.name)}"
+  ui:
+    label: Teaser
+    icon: 'fas fa-external-link-alt'
+    group: special
+    inlineEditable: true
+    position: 100
+    creationDialog:
+      elements:
+        images:
+          type: array<Neos\Media\Domain\Model\Asset>
+          ui:
+            label: Bilder
+            editor: 'Neos.Neos/Inspector/Editors/AssetEditor'
+            editorOptions:
+              multiple: true
+              accept: 'image/*'
+              features:
+                mediaBrowser: false
+  options:
+    template:
+      childNodes:
+        image:
+          name: '${"image-" + key}'
+          type: 'Workshop.Theme:Content.Teaser.Item'
+          properties:
+            image: '${item}'
+          withItems: '${data.images}'
+          when: '${data.images}'
+  constraints:
+    nodeTypes:
+      '*': false
+      'Workshop.Theme:Content.Teaser.Item': true
+
+'Workshop.Theme:Content.Teaser.Item':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Carbon.Image:Image': true
+    'Carbon.Image:Link': true
+    'Workshop.Theme:Constraint.Content.Restricted': true
+  ui:
+    label: Teaser
+    icon: 'fas fa-external-link-alt'
+    inlineEditable: true
+    inspector:
+      groups:
+        settings:
+          position: 10
+          icon: 'fas fa-file-alt'
+          label: 'Texte'
+  properties:
+    title:
+      type: string
+      ui:
+        label: Titel
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          position: 10
+    text:
+      type: string
+      ui:
+        label: Untertitel
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          position: 20
+    image:
+      ui:
+        inspector:
+          editorOptions:
+            features:
+              crop: true
+            crop:
+              aspectRatio:
+                forceCrop: true
+                locked:
+                  width: 4
+                  height: 3

@@ -1,0 +1,16 @@
+.team-item {
+  flex: 0 0 calc(100% - #{$grid-gutter-width});
+  max-width: calc(100% - #{$grid-gutter-width});
+  margin: x #{$grid-gutter-width / 2} #{$grid-gutter-width};
+
+  @include media-break-up(sm) {
+    flex: 0 0 calc(50% - #{$grid-gutter-width});
+    max-width: calc(50% - #{$grid-gutter-width});
+  }
+}
+
+.team-item__details {
+  > span {
+    display: block;
+  }
+}

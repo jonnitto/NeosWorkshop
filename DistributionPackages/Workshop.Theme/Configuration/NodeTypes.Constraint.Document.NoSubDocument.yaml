@@ -1,0 +1,14 @@
+##
+# Adding this as superType will prevent inserting any page type below these pages
+#
+# Article about Node Constraints
+# http://neos.readthedocs.io/en/stable/CreatingASite/NodeTypes/NodeConstraints.html
+#
+##
+
+'Workshop.Theme:Constraint.Document.NoSubDocument':
+  abstract: true
+  constraints:
+    nodeTypes:
+      'Neos.Neos:Document': false
+      'Neos.Neos:Shortcut': false

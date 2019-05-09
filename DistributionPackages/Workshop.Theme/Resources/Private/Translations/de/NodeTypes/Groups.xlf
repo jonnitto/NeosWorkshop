@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" 
+    xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="Workshop.Theme" source-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="gallery" xml:space="preserve">
+                <source>Galerien</source>
+            </trans-unit>
+            <trans-unit id="teaser" xml:space="preserve">
+                <source>Teaser</source>
+            </trans-unit>
+            <trans-unit id="form" xml:space="preserve">
+                <source>Formulare</source>
+            </trans-unit>
+            <trans-unit id="special" xml:space="preserve">
+                <source>Spezieller Inhalt</source>
+            </trans-unit>
+            <trans-unit id="system" xml:space="preserve">
+                <source>Systemelemente</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

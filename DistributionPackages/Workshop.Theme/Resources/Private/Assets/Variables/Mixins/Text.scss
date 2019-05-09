@@ -1,0 +1,107 @@
+@mixin headings-font-size($size: $h1-font-size, $small: null, $upper: xl) {
+  @if $small == null {
+    $small: $size / 2;
+  }
+
+  @if type-of($upper) != "number" {
+    $upper: break-min($upper);
+  }
+
+  @if is-relative-length($small) {
+    $small: strip-unit($small) * 16px;
+  }
+
+  @if is-relative-length($size) {
+    $size: strip-unit($size) * 16px;
+  }
+
+  font-size: responsive $small $size;
+  font-range: 400px $upper;
+}
+
+@mixin text-content($align: left) {
+  max-width: $container-max-width-md;
+  margin: x auto;
+  text-align: $align;
+
+  p {
+    line-height: 1.5625;
+  }
+
+  // Reset editor styles
+  .ck-content .table table,
+  table {
+    td,
+    th {
+      padding: 0 10px 0 0;
+      vertical-align: baseline;
+      text-align: left;
+      background: transparent;
+    }
+
+    thead th {
+      vertical-align: bottom;
+      border-bottom: 1px solid #aaa;
+      background: transparent;
+    }
+
+    // tbody {
+    //   tr:nth-child(even) {
+    //     th,
+    //     td {
+    //       background: #f5f5f5;
+    //     }
+    //   }
+    // }
+  }
+
+  table {
+    margin-bottom: 1rem;
+    border: 0;
+
+    // &:not([align]) {
+    //   width: 100%;
+    // }
+
+    td,
+    th {
+      border: 0;
+    }
+
+    caption {
+      caption-side: top;
+      color: $body-color;
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    //@include hyphens;
+    max-width: $text-max-width;
+  }
+
+  ol,
+  ul {
+    padding: 0 0 0 20px;
+
+    > li:not([class]) {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  ul > li:not([class]) {
+    list-style: square;
+  }
+
+  a:not([class]) {
+    text-decoration: underline;
+    color: #000;
+
+    &:hover,
+    &:focus {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@mixin container-base {
+  padding: x $grid-gutter-width / 2;
+  margin: x auto;
+  width: 100%;
+}
+
+@mixin container-xl {
+  @include container-base;
+
+  max-width: $container-max-width-xl;
+}
+
+@mixin container-lg {
+  @include container-base;
+
+  max-width: $container-max-width-lg;
+}
+
+@mixin container-md {
+  @include container-base;
+
+  max-width: $container-max-width-md;
+}
+
+@mixin container-sm {
+  @include container-base;
+
+  max-width: $container-max-width-sm;
+}
+
+@mixin container-xs {
+  @include container-base;
+
+  max-width: $container-max-width-xs;
+}

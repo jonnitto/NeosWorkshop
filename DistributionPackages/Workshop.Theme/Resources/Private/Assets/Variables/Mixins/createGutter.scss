@@ -1,0 +1,10 @@
+@mixin create-gutter($gutter: 30px) {
+  margin-right: $gutter / -2;
+  margin-left: $gutter / -2;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+  }
+}

@@ -1,0 +1,135 @@
+'Workshop.Theme:Document.Home':
+  superTypes:
+    'Workshop.Theme:Mixin.Document': true
+    'Workshop.Theme:Constraint.Document.Restricted': true
+    'Workshop.Theme:Mixin.MainContentCollection': true
+  ui:
+    icon: 'fas fa-home'
+    label: i18n
+    inspector:
+      tabs:
+        contact:
+          label: i18n
+          position: 10
+          icon: icon-envelope
+      groups:
+        contact:
+          label: i18n
+          position: 10
+          icon: icon-envelope
+          tab: contact
+        social:
+          label: i18n
+          position: 20
+          icon: icon-twitter
+          tab: contact
+          collapsed: true
+        footernavigation:
+          label: i18n
+          position: 100
+          icon: icon-bars
+        document:
+          tab: meta
+        type:
+          tab: hide
+        visibility:
+          tab: hide
+  childNodes:
+    imprint:
+      type: 'Workshop.Theme:Document.Meta'
+    privacy:
+      type: 'Workshop.Theme:Document.Meta'
+      position: 'after imprint'
+    notfound:
+      type: 'Workshop.Theme:Document.NotFound'
+      position: 'after privacy'
+  constraints:
+    nodeTypes:
+      'Workshop.Theme:Document.NotFound': true
+  properties:
+    phone:
+      type: string
+      ui:
+        label: Telefon
+        reloadIfChanged: true
+        inspector:
+          group: contact
+          position: 10
+    mail:
+      type: string
+      ui:
+        label: E-Mail
+        reloadIfChanged: true
+        inspector:
+          group: contact
+          position: 30
+      validation:
+        'Neos.Neos/Validation/EmailAddressValidator': []
+    address:
+      type: string
+      ui:
+        label: Adresse
+        reloadIfChanged: true
+        inspector:
+          group: contact
+          editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
+          position: 40
+    socialFacebook:
+      type: string
+      ui:
+        label: Facebook
+        reloadIfChanged: true
+        inspector:
+          group: social
+      validation:
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\S]*)$'
+    socialTwitter:
+      type: string
+      ui:
+        label: Twitter
+        reloadIfChanged: true
+        inspector:
+          group: social
+      validation:
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\S]*)$'
+    socialInstagram:
+      type: string
+      ui:
+        label: Instagram
+        reloadIfChanged: true
+        inspector:
+          group: social
+      validation:
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\S]*)$'
+    socialVimeo:
+      type: string
+      ui:
+        label: Vimeo
+        reloadIfChanged: true
+        inspector:
+          group: social
+      validation:
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\S]*)$'
+    socialYouTube:
+      type: string
+      ui:
+        label: YouTube
+        reloadIfChanged: true
+        inspector:
+          group: social
+      validation:
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\S]*)$'
+    footernavigation:
+      type: references
+      ui:
+        label: i18n
+        inspector:
+          group: footernavigation
+          position: 100
+          editorOptions:
+            nodeTypes: ['Neos.Neos:Document']

@@ -1,0 +1,8 @@
+'Workshop.Theme:Document.Page':
+  superTypes:
+    'Workshop.Theme:Mixin.Document': true
+    'Workshop.Theme:Mixin.MainContentCollection': true
+  ui:
+    position: 10
+    label: i18n
+    icon: 'fas fa-file'

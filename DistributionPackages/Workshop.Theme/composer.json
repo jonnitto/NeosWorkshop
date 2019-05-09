@@ -1,0 +1,48 @@
+{
+    "name": "workshop/theme",
+    "type": "neos-site",
+    "require": {
+        "neos/neos": "*",
+        "neos/neos-ui": "^3.3",
+        "neos/fusion-afx": "^1.2",
+        "neos/redirecthandler-databasestorage": "^3.0",
+        "neos/redirecthandler-neosadapter": "^3.0",
+        "aertmann/history": "^2.0",
+        "carbon/compression": "^1.1",
+        "carbon/eel": "^1.5",
+        "carbon/firstelement": "^1.0",
+        "carbon/frontend": "^4.2",
+        "carbon/image": "^2.0",
+        "carbon/includeassets": "^3.5",
+        "carbon/link": "^1.1",
+        "carbon/notification": "^1.2",
+        "dotpulse/outdatedbrowser": "^2.3",
+        "flowpack/nodetemplates": "^1.1",
+        "gesagtgetan/cookiedialogue": "^3.5",
+        "sitegeist/silhouettes": "^1.0",
+        "webexcess/redirecthandler-backend": "^1.1",
+        "wwwision/neos-creationdialogproperties": "^0.5.0",
+        "dl/assetsource-unsplash": "^1.1",
+        "jonnitto/photoswipe": "^3.0",
+        "jonnitto/imagesinarow": "^3.0",
+        "neos/seo": "^3.0"
+    },
+    "authors": [
+        {
+            "name": "Jon Uhlmann",
+            "email": "me@jonnitto.ch",
+            "homepage": "https://www.jonnitto.ch",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Workshop\\Theme\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Workshop.Theme"
+        }
+    }
+}

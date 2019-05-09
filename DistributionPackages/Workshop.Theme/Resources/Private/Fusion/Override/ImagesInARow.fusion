@@ -1,0 +1,3 @@
+prototype(Jonnitto.ImagesInARow:Container) {
+    attributes.class.reveals = 'reveals'
+}

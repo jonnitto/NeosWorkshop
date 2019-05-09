@@ -1,0 +1,30 @@
+// @include node-spacing-top;
+// @include node-spacing-bottom;
+
+@mixin node-spacing($spacing: $node-spacing, $property: margin-top, $direction: bottom) {
+  #{$property}-#{$direction}: $spacing;
+}
+
+@mixin node-spacing-top($spacing: $node-spacing, $property: margin, $breakpoint: md) {
+  @include node-spacing($spacing / 2, $property, top);
+
+  @include media-break-up($breakpoint) {
+    @include node-spacing($spacing, $property, top);
+  }
+}
+
+@mixin node-spacing-bottom($spacing: $node-spacing, $property: margin, $breakpoint: md) {
+  @include node-spacing($spacing / 2, $property, bottom);
+
+  @include media-break-up($breakpoint) {
+    @include node-spacing($spacing, $property, bottom);
+  }
+}
+
+@mixin reset-node-spacing-top($spacing: $node-spacing, $property: margin, $breakpoint: md) {
+  @include node-spacing($spacing / -2, $property, top);
+
+  @include media-break-up($breakpoint) {
+    @include node-spacing($spacing * -1, $property, top);
+  }
+}
