@@ -1,7 +1,7 @@
-Neos:
-  Media:
-    assetSources:
-      unsplash:
-        assetSourceOptions:
-          utmSource: 'Neos CMS Unsplash Asset Source https://neos.io'
-          copyRightNoticeTemplate: '${"Foto von <a href=\"https://unsplash.com/" + user.username + "\">" + user.name + "</a> auf <a href=\"https://unsplash.com\">Unsplash</a>"}'
+# Neos:
+#   Media:
+#     assetSources:
+#       unsplash:
+#         assetSourceOptions:
+#           utmSource: 'Neos CMS Unsplash Asset Source https://neos.io'
+#           copyRightNoticeTemplate: '${"Foto von <a href=\"https://unsplash.com/" + user.username + "\">" + user.name + "</a> auf <a href=\"https://unsplash.com\">Unsplash</a>"}'
