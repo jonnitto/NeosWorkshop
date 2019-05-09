@@ -3,7 +3,8 @@ prototype(Workshop.Theme:Document.Fragment.Footer) < prototype(Neos.Fusion:Compo
     phone = ${q(site).property('phone')}
     mail = ${q(site).property('mail')}
     menuItems = Neos.Neos:MenuItems {
-        itemCollection = ${q(node).closest('[navigationreferences]').property('navigationreferences')}
+        itemCollection = ${q(node).closest('[footernavigation]').property('footernavigation')}
+        renderHiddenInIndex = true
     }
     contact = ${Translation.translate('contact', null, [], null, 'Workshop.Theme')}
 
@@ -29,7 +30,7 @@ prototype(Workshop.Theme:Document.Fragment.Footer) < prototype(Neos.Fusion:Compo
                     M: <a href={'mailto:' + props.mail}>{props.mail}</a>
                 </span>
             </p>
-            <nav class="footer-nav" @if.set={Type.isArray(props.menuItems) && Arrray.length(props.menuItems)}>
+            <nav class="footer-nav" @if.set={Type.isArray(props.menuItems) && Array.length(props.menuItems)}>
                 <ul class="footer-nav__list">
                     <Neos.Fusion:Loop items={props.menuItems}>
                         <li class="footer-nav__element">
