@@ -1,0 +1,4 @@
+prototype(Shel.Neos.YoastSeo:Documents.YoastSeoView) {
+    carbonIncludeAssetsHead >
+    carbonIncludeAssetsBody >
+}

@@ -24,7 +24,8 @@
         "wwwision/neos-creationdialogproperties": "^0.5.0",
         "jonnitto/photoswipe": "^3.0",
         "jonnitto/imagesinarow": "^3.0",
-        "neos/seo": "^3.0"
+        "neos/seo": "^3.0",
+        "yoast/yoast-seo-for-neos": "^0.2.2"
     },
     "authors": [
         {
