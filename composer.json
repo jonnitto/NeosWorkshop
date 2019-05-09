@@ -1,6 +1,8 @@
 {
     "name": "Pirates",
     "homepage": "https://www.fork-n-knife.com",
+    "description": "Websites from the Neos Workshop",
+    "license": "proprietary",
     "config": {
         "vendor-dir": "Packages/Libraries",
         "bin-dir": "bin"
