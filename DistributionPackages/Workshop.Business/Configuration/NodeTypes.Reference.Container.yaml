@@ -1,0 +1,10 @@
+'Workshop.Business:Reference.Container':
+  superTypes:
+    'Workshop.Business:Mixin.Container': true
+  ui:
+    label: Referenzen
+    icon: 'fas fa-box-open'
+    position: 950
+  constraints:
+    nodeTypes:
+      'Workshop.Business:Reference.Item': true

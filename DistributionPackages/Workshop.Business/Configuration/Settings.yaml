@@ -1,0 +1,19 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Workshop.Business: true
+# Carbon:
+#   IncludeAssets:
+#     Packages:
+#       Projects:
+#         Package: 'Workshop.Projects'
+#         ConditionPrototype: 'Workshop.Projects:IncludeCase'
+#         Live:
+#           Head:
+#             - Main.css
+#             - Main.js[defer]
+#         Backend:
+#           Head:
+#             - Backend.css
+#             - Backend.js[defer]

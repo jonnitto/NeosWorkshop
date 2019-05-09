@@ -1,0 +1,67 @@
+'Workshop.Business:Mixin.Container':
+  abstract: true
+  superTypes:
+    'Workshop.Theme:Mixin.Document': true
+    'Workshop.Theme:Mixin.MainContentCollection': true
+    'Workshop.Theme:Constraint.Document.NoSubDocument': true
+    'Workshop.Theme:Constraint.Document.Restricted': true
+  childNodes:
+    main:
+      constraints:
+        nodeTypes:
+          'Workshop.Theme:Content.Teaser.Container': false
+          'Workshop.Theme:Content.Team.Container': false
+
+'Workshop.Theme:Document.Home':
+  constraints:
+    nodeTypes:
+      'Workshop.Business:Mixin.Container': true
+
+'Workshop.Business:Mixin.Item':
+  abstract: true
+  superTypes:
+    'Workshop.Theme:Mixin.Document': true
+    'Workshop.Theme:Mixin.MainContentCollection': true
+    'Workshop.Theme:Constraint.Document.NoSubDocument': true
+    'Workshop.Theme:Constraint.Document.Restricted': true
+    'Carbon.Image:Image': true
+    'Carbon.Image:AlternativeText': true
+  properties:
+    title:
+      options:
+        silhouette: 'text.title'
+      ui:
+        inline:
+          editorOptions:
+            formatting:
+              sub: false
+              sup: false
+              a: false
+    subtitle:
+      options:
+        silhouette: 'text.subtitle'
+      ui:
+        inline:
+          editorOptions:
+            formatting:
+              sub: false
+              sup: false
+              a: false
+    lead:
+      options:
+        silhouette: 'text.pure'
+    image:
+      ui:
+        label: Vorschaubild
+        reloadIfChanged: false
+        inspector:
+          editorOptions:
+            features:
+              crop: true
+            crop:
+              aspectRatio:
+                forceCrop: true
+                locked:
+                  width: 4
+                  height: 3
+

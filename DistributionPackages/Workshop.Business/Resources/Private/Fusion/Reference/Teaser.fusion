@@ -1,0 +1,13 @@
+prototype(Workshop.Business:Reference.Container.Teaser) < prototype(Neos.Fusion:Component) {
+    node = null
+    title = ${q(this.node).property('title')}
+    text = ${q(this.node).property('subtitle')}
+    image = ${q(this.node).property('image')}
+    backendLink = true
+
+    @if.set = ${this.node}
+
+    renderer = afx`
+        <Workshop.Theme:Component.Teaser {...props} />
+    `
+}

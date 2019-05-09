@@ -1,0 +1,22 @@
+'Workshop.Business:Reference.Item':
+  superTypes:
+    'Workshop.Business:Mixin.Item': true
+  ui:
+    label: Referenz
+    icon: 'fas fa-star'
+    inspector:
+      groups:
+        settings:
+          label: Dienstleistungen
+          icon: 'fas fa-leaf'
+          position: 10
+  properties:
+    services:
+      type: references
+      ui:
+        label: 'Dienstleistungsbereiche'
+        reloadIfChanged: true
+        inspector:
+          group: settings
+          editorOptions:
+            nodeTypes: ['Workshop.Business:Service.Item']

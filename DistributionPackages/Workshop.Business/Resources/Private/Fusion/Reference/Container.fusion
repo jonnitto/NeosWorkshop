@@ -1,0 +1,20 @@
+prototype(Workshop.Business:Reference.Container) < prototype(Neos.Fusion:Component) {
+    items = ${q(node).children('[instanceof Workshop.Business:Reference.Item]').get()}
+
+    renderer = afx`
+        <Workshop.Theme:Document.Base>
+            <main class='main-element' aria-label='Content'>
+                <Neos.Neos:ContentCollection nodePath='main' />
+                <div
+                    class={['card-container reveals', Carbon.String.BEM('teaser-container', 'row', '3')]}
+                    @if.render={Array.length(props.items)}
+                >
+                    <Neos.Fusion:Loop items={props.items}>
+                        <Workshop.Business:Reference.Container.Teaser node={item}/>
+                    </Neos.Fusion:Loop>
+                </div>
+            </main>
+        </Workshop.Theme:Document.Base>
+    `
+}
+

@@ -1,0 +1,43 @@
+prototype(Workshop.Business:Service.Item) < prototype(Neos.Fusion:Component) {
+    prototype(Carbon.FirstElement:Mixin) {
+        renderer = false
+    }
+
+    references = Neos.Fusion:Map {
+        items = ${q(site).find('[instanceof Workshop.Business:Reference.Container]').find('[instanceof Workshop.Business:Reference.Item]').get()}
+        itemRenderer = ${Array.indexOf(q(item).property('services'), node) != -1 ? item : false}
+        @process.filter = ${Carbon.Array.filter(value)}
+    }
+
+    renderer = afx`
+        <Workshop.Theme:Document.Base>
+            <main class='main-element' aria-label='Content'>
+                <Workshop.Theme:Content.Headline tagName='h1' leadProperty='lead' />
+                <Neos.Neos:ContentCollection nodePath='main' />
+                <h3 class='-center' @if.render={props.references && Array.length(props.references)}>Referenzen zu dieser Dienstleistung:</h3>
+                <div
+                    class={['card-container reveals', Carbon.String.BEM('teaser-container', 'row', '4')]}
+                    @if.render={props.references && Array.length(props.references)}
+                >
+                    <Neos.Fusion:Loop items={props.references}>
+                        <Workshop.Business:Reference.Container.Teaser node={item}/>
+                    </Neos.Fusion:Loop>
+                </div>
+            </main>
+        </Workshop.Theme:Document.Base>
+    `
+
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            node = ${node}
+            editPreviewMode = ${node.context.currentRenderingMode.name}
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(node)}
+            2 = ${Neos.Caching.nodeTypeTag('Workshop.Business:Reference.Container')}
+            3 = ${Neos.Caching.nodeTypeTag('Workshop.Business:Reference.Item')}
+        }
+    }
+}

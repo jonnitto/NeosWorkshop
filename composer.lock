@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd876653b8781350ee32dd93d12ea9eb",
+    "content-hash": "08547bf65b25166b61e0bccc4c3bab4a",
     "packages": [
         {
             "name": "aertmann/history",
@@ -5488,6 +5488,39 @@
             "time": "2018-07-19T09:21:41+00:00"
         },
         {
+            "name": "workshop/business",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "DistributionPackages/Workshop.Business",
+                "reference": "c92424ae5cc765a7f4a0b0de2a51bd69f1c2c9ee",
+                "shasum": null
+            },
+            "require": {
+                "workshop/theme": "*"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "neos": {
+                    "package-key": "Workshop.Business"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Workshop\\Business\\": "Classes/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://www.jonnitto.ch",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Business fields"
+        },
+        {
             "name": "workshop/theme",
             "version": "dev-master",
             "dist": {
@@ -5776,6 +5809,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "jonnitto/slider": 20,
+        "workshop/business": 20,
         "workshop/theme": 20
     },
     "prefer-stable": false,

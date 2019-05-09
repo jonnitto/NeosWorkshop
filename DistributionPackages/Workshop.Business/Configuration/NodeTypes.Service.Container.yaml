@@ -1,0 +1,10 @@
+'Workshop.Business:Service.Container':
+  superTypes:
+    'Workshop.Business:Mixin.Container': true
+  ui:
+    label: Dienstleistungen
+    icon: 'fab fa-pagelines'
+    position: 900
+  constraints:
+    nodeTypes:
+      'Workshop.Business:Service.Item': true

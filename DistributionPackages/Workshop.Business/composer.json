@@ -1,0 +1,26 @@
+{
+    "name": "workshop/business",
+    "description": "Business fields",
+    "type": "neos-plugin",
+    "authors": [
+        {
+            "name": "Jon Uhlmann",
+            "email": "me@jonnitto.ch",
+            "homepage": "https://www.jonnitto.ch",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Workshop\\Business\\": "Classes/"
+        }
+    },
+    "require": {
+        "workshop/theme": "*"
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Workshop.Business"
+        }
+    }
+}

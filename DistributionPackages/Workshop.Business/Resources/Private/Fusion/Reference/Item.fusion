@@ -1,0 +1,46 @@
+prototype(Workshop.Business:Reference.Item) < prototype(Neos.Fusion:Component) {
+    prototype(Carbon.FirstElement:Mixin) {
+        renderer = false
+    }
+
+    services = ${q(node).property('services')}
+
+    renderer = Neos.Fusion:Component {
+        @apply.props = ${props}
+
+        teaser = afx`
+            <Neos.Fusion:Loop items={props.services}>
+                <Workshop.Business:Service.Container.Teaser node={item}/>
+            </Neos.Fusion:Loop>
+        `
+
+        renderer = afx`
+            <Workshop.Theme:Document.Base>
+                <main class='main-element' aria-label='Content'>
+                    <Workshop.Theme:Content.Headline tagName='h1' leadProperty='lead' />
+                    <Neos.Neos:ContentCollection nodePath='main' />
+                    <h3 class='-center' @if.render={props.teaser}>Dienstleistungen zu dieser Referenz:</h3>
+                    <div
+                        class={['card-container reveals', Carbon.String.BEM('teaser-container', 'row', '4')]}
+                        @if.render={props.teaser}
+                    >
+                        {props.teaser}
+                    </div>
+                </main>
+            </Workshop.Theme:Document.Base>
+        `
+    }
+
+    @cache {
+        mode = 'cached'
+        entryIdentifier {
+            node = ${node}
+            editPreviewMode = ${node.context.currentRenderingMode.name}
+        }
+        entryTags {
+            1 = ${Neos.Caching.nodeTag(node)}
+            2 = ${Neos.Caching.nodeTypeTag('Workshop.Business:Service.Container')}
+            3 = ${Neos.Caching.nodeTypeTag('Workshop.Business:Service.Item')}
+        }
+    }
+}

@@ -1,0 +1,6 @@
+'Workshop.Business:Service.Item':
+  superTypes:
+    'Workshop.Business:Mixin.Item': true
+  ui:
+    label: Dienstleistung
+    icon: 'fas fa-leaf'
