@@ -3,7 +3,7 @@ prototype(Workshop.Theme:Document.Fragment.Footer) < prototype(Neos.Fusion:Compo
     phone = ${q(site).property('phone')}
     mail = ${q(site).property('mail')}
     menuItems = Neos.Neos:MenuItems {
-        itemCollection = ${q(node).closest('[footernavigation]').property('footernavigation')}
+        itemCollection = ${q(site).property('footernavigation')}
         renderHiddenInIndex = true
     }
     contact = ${Translation.translate('contact', null, [], null, 'Workshop.Theme')}
