@@ -21,7 +21,11 @@ prototype(Workshop.Theme:Document.Base) < prototype(Neos.Fusion:Component) {
             }
         }
         head.metadata = Workshop.Theme:Document.Fragment.MetaData
-        bodyTag.attributes.class = ${props.bodyClass}
+        bodyTag.attributes.class = Neos.Fusion:DataStructure {
+            bodyClass = ${props.bodyClass}
+        }
+        
+        
         body {
             // Reset values from the Neos.Neos package
             node = null
