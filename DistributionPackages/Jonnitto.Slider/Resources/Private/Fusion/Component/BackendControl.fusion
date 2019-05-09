@@ -1,0 +1,30 @@
+prototype(Jonnitto.Slider:Component.BackendControl) < prototype(Neos.Fusion:Component) {
+    options = Neos.Fusion:DataStructure
+    id = ${node.identifier}
+    count = 0
+
+    @if.render = ${node.context.inBackend && this.count && this.count > 1}
+    defaultArrowShape = 'M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z'
+    renderer = afx`
+        <Neos.Fusion:Loop
+            @if.render={props.options.prevNextButtons != false}
+            items={['previous','next']}
+            @children='itemRenderer'>
+            <button class={['flickity-button flickity-prev-next-button', item]} type='button'>
+                <svg class='flickity-button-icon' viewBox='0 0 100 100'>
+                    <path 
+                        d={props.options.arrowShape || props.defaultArrowShape}
+                        class='arrow'
+                        transform={iterator.isLast ? 'translate(100,100) rotate(180)' : false}
+                    />
+                </svg>
+            </button>
+        </Neos.Fusion:Loop>
+        <ol @if.render={props.id && props.options.pageDots != false} class='flickity-page-dots'>
+            <Neos.Fusion:Loop
+                items={Array.range(1, props.count)}
+                itemRenderer={'<li class="dot" data-index="' + iterator.index + '"></li>'}
+            />
+        </ol>
+    `
+}

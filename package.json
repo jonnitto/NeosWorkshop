@@ -43,9 +43,11 @@
     "showConfig": "yarn gulp showConfig"
   },
   "dependencies": {
+    "fizzy-ui-utils": "^2.0.7",
     "flickity": "^2.2.0",
     "gator": "^1.2.4",
     "headroom.js": "^0.9.4",
+    "imagesloaded": "^4.1.4",
     "jump.js": "^1.0.2",
     "scrollreveal": "^4.0.5"
   },

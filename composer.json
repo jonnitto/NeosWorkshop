@@ -9,6 +9,7 @@
     },
     "require": {
         "neos/neos": "~4.3.0",
+        "jonnitto/slider": "@dev",
         "workshop/theme": "@dev"
     },
     "require-dev": {

@@ -1,0 +1,52 @@
+prototype(Jonnitto.Slider:PageSlider.Frontend.Slide) < prototype(Neos.Fusion:Component) {
+    node = ${item}
+    image = ${q(this.node).property('image')}
+    tablet = ${q(this.node).property('tablet')}
+    mobile = ${q(this.node).property('mobile')}
+    alternativeText = ${q(this.node).property('alternativeText')}
+    link = ${q(this.node).property('link')}
+
+    renderer = Carbon.Link:Link {
+        additionalClass = ${BEM.string('slider', 'slide', 'page')}
+        defaultTagName = 'div'
+        renderDefaultTagIfNoLink = true
+        link = ${props.link}
+        content = Sitegeist.Kaleidoscope:Picture {
+            alt = ${props.alternativeText}
+            imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+                asset = ${props.image || props.tablet || props.mobile}
+            }
+            sources = Neos.Fusion:DataStructure {
+                large = Neos.Fusion:DataStructure {
+                    imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+                        asset = ${props.image || props.tablet || props.mobile}
+                        width = 3
+                        height = 1
+                    }
+                    srcset = '1024w, 1400w, 1600w, 1800w, 2048w, 2800w, 3200w'
+                    sizes = '100vw'
+                    media = '(min-width: 1024px)'
+                }
+                tablet = Neos.Fusion:DataStructure {
+                    imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+                        asset = ${props.tablet || props.mobile || props.image}
+                        width = 2
+                        height = 1
+                    }
+                    srcset = '768w, 1023w, 1536w, 2046w'
+                    sizes = '100vw'
+                    media = '(min-width: 768px)'
+                }
+                mobile = Neos.Fusion:DataStructure {
+                    imageSource = Sitegeist.Kaleidoscope:AssetImageSource {
+                        asset = ${props.mobile || props.tablet || props.image}
+                        width = 1
+                        height = 1
+                    }
+                    srcset = '320w, 480w, 620w, 800w, 1024w'
+                    sizes = '100vw'
+                }
+            }
+        }
+    }
+}

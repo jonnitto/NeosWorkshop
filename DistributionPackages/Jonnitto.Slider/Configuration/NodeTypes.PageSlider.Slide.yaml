@@ -1,0 +1,69 @@
+'Jonnitto.Slider:PageSlider.Slide':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Carbon.Image:Image': true
+    'Carbon.Image:AlternativeText': true
+    'Carbon.Image:Link': true
+    'Carbon.Image:BackendLabel': true
+    'Jonnitto.Slider:Include': true
+  ui:
+    label: i18n
+  properties:
+    link:
+      ui:
+        inspector:
+          position: 1
+          hidden: false
+    alternativeText:
+      ui:
+        inspector:
+          position: 2
+          hidden: false
+    image:
+      ui:
+        label: i18n
+        inspector:
+          position: 10
+          editorOptions:
+            crop:
+              aspectRatio:
+                forceCrop: true
+                locked:
+                  width: 3
+                  height: 1
+    tablet:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: i18n
+        reloadIfChanged: false
+        inspector:
+          group: image
+          position: 20
+          editorOptions:
+            crop:
+              aspectRatio:
+                forceCrop: true
+                locked:
+                  width: 2
+                  height: 1
+    mobile:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: i18n
+        reloadIfChanged: false
+        inspector:
+          group: image
+          position: 30
+          editorOptions:
+            crop:
+              aspectRatio:
+                forceCrop: true
+                locked:
+                  width: 1
+                  height: 1
+
+
+'Neos.Neos:ContentCollection':
+  constraints:
+    nodeTypes:
+      'Jonnitto.Slider:PageSlider.Slide': false

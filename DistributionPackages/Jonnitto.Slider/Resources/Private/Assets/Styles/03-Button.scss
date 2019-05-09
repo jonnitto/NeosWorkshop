@@ -1,0 +1,32 @@
+.flickity-button {
+  position: absolute;
+  border: none;
+  color: $slider-color-button;
+  background: transparent;
+  opacity: 1;
+  transition: transform 0.2s;
+
+  &:hover {
+    cursor: pointer;
+
+    .flickity-button-icon {
+      transform: scale(1.05);
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.1;
+    cursor: auto;
+    // prevent disabled button from capturing pointer up event.
+    pointer-events: none;
+  }
+}
+
+.flickity-button-icon {
+  fill: currentColor;
+  transition: transform 0.2s;
+}
