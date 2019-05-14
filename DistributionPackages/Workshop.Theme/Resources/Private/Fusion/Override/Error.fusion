@@ -10,7 +10,10 @@ error {
         @position = 'start'
         condition = ${statusCode >= 400 && statusCode < 500 && notfoundDocument}
         renderer = Neos.Fusion:Renderer {
-            @context.node = ${notfoundDocument}
+            @context {
+                node = ${notfoundDocument}
+                documentNode = ${notfoundDocument}
+            }
             renderPath = '/root'
         }
     }
