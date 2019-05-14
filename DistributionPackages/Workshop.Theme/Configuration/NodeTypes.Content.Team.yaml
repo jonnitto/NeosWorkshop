@@ -14,7 +14,7 @@
         persons:
           type: string
           ui:
-            label: 'Personen (jede Zeile wird eine Person)'
+            label: "Persons (every row get's a persons)"
             editor: 'Neos.Neos/Inspector/Editors/TextAreaEditor'
   options:
     template:
