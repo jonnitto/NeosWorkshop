@@ -1,6 +1,6 @@
 prototype(Jonnitto.Slider:Component.BackendControl) < prototype(Neos.Fusion:Component) {
     options = Neos.Fusion:DataStructure
-    id = ${node.identifier}
+    id = ${q(node).property('_identifier')}
     count = 0
 
     @if.render = ${node.context.inBackend && this.count && this.count > 1}
