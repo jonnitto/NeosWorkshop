@@ -4,7 +4,6 @@ prototype(Jonnitto.Slider:Component.Items) < prototype(Neos.Neos:ContentComponen
     namespace = null
     itemRenderer = null
     renderInBackendIfEmpty = false
-    renderInBackendIfEmpty.@process = ${value ? node.context.inBackend : false}
     enableInBackend = true
     options = Neos.Fusion:DataStructure
     tagName = 'div'
@@ -14,12 +13,11 @@ prototype(Jonnitto.Slider:Component.Items) < prototype(Neos.Neos:ContentComponen
     jump = false
 
     // Internal
+    backendRender = ${this.renderInBackendIfEmpty ? node.context.inBackend : false}
     count = ${Type.isArray(this.items) ? Array.length(this.items) : null}
-    @if.render = ${(this.count || this.renderInBackendIfEmpty) && this.itemRenderer}
-
+    @if.render = ${(this.count || this.backendRender) && this.itemRenderer}
 
     renderer = Neos.Fusion:Component {
-        @if.render = ${props.content || props.renderInBackendIfEmpty}
         @apply {
             spread_1 = ${props}
             spread_2 = Neos.Fusion:DataStructure {
