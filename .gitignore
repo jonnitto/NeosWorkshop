@@ -19,7 +19,6 @@ __*
 
 /bin
 /Build
-/Configuration
 /Data
 /Packages
 /_Resources
@@ -27,3 +26,15 @@ __*
 /Web/_Resources
 /Web/index.php
 /Web/robots.txt
+
+# Beach config
+/Configuration/*
+!/Configuration/Development
+/Configuration/Development/*
+!/Configuration/Development/Beach
+!/Configuration/Production
+/Configuration/Production/*
+!/Configuration/Production/Beach
+!/Configuration/Testing
+/Configuration/Testing/*
+!/Configuration/Testing/Beach
