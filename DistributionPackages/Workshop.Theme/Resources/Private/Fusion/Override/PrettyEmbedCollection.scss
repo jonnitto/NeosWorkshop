@@ -1,0 +1,7 @@
+.video-wrapper {
+  @include node-spacing-top;
+  @include node-spacing-bottom;
+
+  margin: x auto;
+  max-width: 800px;
+}

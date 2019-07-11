@@ -2064,6 +2064,276 @@
             "time": "2019-06-06T08:44:12+00:00"
         },
         {
+            "name": "jonnitto/prettyembedcollection",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedCollection.git",
+                "reference": "8bbbed9482f3b47dd1314b62f6a928f6449fb7ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedCollection/zipball/8bbbed9482f3b47dd1314b62f6a928f6449fb7ac",
+                "reference": "8bbbed9482f3b47dd1314b62f6a928f6449fb7ac",
+                "shasum": ""
+            },
+            "require": {
+                "jonnitto/prettyembedvideo": "^1.0",
+                "jonnitto/prettyembedvimeo": "^2.0",
+                "jonnitto/prettyembedyoutube": "^6.0"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Jonnitto.PrettyEmbedCollection",
+                "neos": {
+                    "package-key": "Jonnitto.PrettyEmbedCollection"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedCollection\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://twitter.com/jonnitto",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Collection of all packages from the PrettyEmbed series",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedCollection",
+            "keywords": [
+                "Neos",
+                "contentelement",
+                "flow",
+                "video",
+                "vimeo",
+                "youtube"
+            ],
+            "time": "2019-06-19T19:29:19+00:00"
+        },
+        {
+            "name": "jonnitto/prettyembedhelper",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper.git",
+                "reference": "1864b2a77874d1715f73a53084a279d07cf0f15b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedHelper/zipball/1864b2a77874d1715f73a53084a279d07cf0f15b",
+                "reference": "1864b2a77874d1715f73a53084a279d07cf0f15b",
+                "shasum": ""
+            },
+            "require": {
+                "carbon/eel": "^1.5",
+                "carbon/includeassets": "^3.5",
+                "carbon/notification": "^1.3.1",
+                "neos/fusion-afx": "^1.2",
+                "neos/neos": "^4.2"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Jonnitto.PrettyEmbedHelper",
+                "neos": {
+                    "package-key": "Jonnitto.PrettyEmbedHelper"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedHelper\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://twitter.com/jonnitto",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Helper mixins, prototypes and frontend resources for the PrettyEmbed Series",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedHelper",
+            "keywords": [
+                "Neos",
+                "contentelement",
+                "flow",
+                "video"
+            ],
+            "time": "2019-06-19T19:49:32+00:00"
+        },
+        {
+            "name": "jonnitto/prettyembedvideo",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo.git",
+                "reference": "97e1d236df19c5becd836a12c2da4c06401659c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedVideo/zipball/97e1d236df19c5becd836a12c2da4c06401659c6",
+                "reference": "97e1d236df19c5becd836a12c2da4c06401659c6",
+                "shasum": ""
+            },
+            "require": {
+                "jonnitto/prettyembedhelper": "^1.0"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Jonnitto.PrettyEmbedVideo",
+                "neos": {
+                    "package-key": "Jonnitto.PrettyEmbedVideo"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedVideo\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://twitter.com/jonnitto",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Prettier embeds for your native videos in Neos CMS - with nice options like high-res preview images, lightbox feature, captions and advanced customization of embed options.",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVideo",
+            "keywords": [
+                "Neos",
+                "contentelement",
+                "flow",
+                "video"
+            ],
+            "time": "2019-06-19T21:28:57+00:00"
+        },
+        {
+            "name": "jonnitto/prettyembedvimeo",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo.git",
+                "reference": "d1e6adbe12c43dbda8498d824cbe749994a7f99e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedVimeo/zipball/d1e6adbe12c43dbda8498d824cbe749994a7f99e",
+                "reference": "d1e6adbe12c43dbda8498d824cbe749994a7f99e",
+                "shasum": ""
+            },
+            "require": {
+                "jonnitto/prettyembedhelper": "^1.0"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Jonnitto.PrettyEmbedVimeo",
+                "neos": {
+                    "package-key": "Jonnitto.PrettyEmbedVimeo"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedVimeo\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://twitter.com/jonnitto",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Prettier embeds for your Vimeo videos in Neos CMS - with nice options like high-res preview images, lightbox feature and advanced customization of embed options.",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedVimeo",
+            "keywords": [
+                "Neos",
+                "contentelement",
+                "flow",
+                "video",
+                "vimeo"
+            ],
+            "time": "2019-06-19T21:07:28+00:00"
+        },
+        {
+            "name": "jonnitto/prettyembedyoutube",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube.git",
+                "reference": "44840e65ab51288e840a405e438a2859ca4fc6ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/Jonnitto.PrettyEmbedYoutube/zipball/44840e65ab51288e840a405e438a2859ca4fc6ff",
+                "reference": "44840e65ab51288e840a405e438a2859ca4fc6ff",
+                "shasum": ""
+            },
+            "require": {
+                "jonnitto/prettyembedhelper": "^1.0"
+            },
+            "type": "neos-plugin",
+            "extra": {
+                "marketplace-account": "me@jonnitto.ch",
+                "installer-name": "Jonnitto.PrettyEmbedYoutube",
+                "neos": {
+                    "package-key": "Jonnitto.PrettyEmbedYoutube"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jonnitto\\PrettyEmbedYoutube\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch",
+                    "homepage": "https://twitter.com/jonnitto",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Prettier embeds for your YouTube videos and playlists in Neos CMS - with nice options like high-res preview images, lightbox feature and advanced customization of embed options.",
+            "homepage": "https://github.com/jonnitto/Jonnitto.PrettyEmbedYoutube",
+            "keywords": [
+                "Neos",
+                "contentelement",
+                "flow",
+                "video",
+                "youtube"
+            ],
+            "time": "2019-06-19T21:00:45+00:00"
+        },
+        {
             "name": "jonnitto/slider",
             "version": "dev-master",
             "dist": {
@@ -5525,7 +5795,7 @@
             "dist": {
                 "type": "path",
                 "url": "DistributionPackages/Workshop.Theme",
-                "reference": "2624dba011695f7d7af342d8ad42d95d45a18382",
+                "reference": "55e5cda284506f16e960568dc5a5a303c332d56c",
                 "shasum": null
             },
             "require": {
@@ -5543,6 +5813,7 @@
                 "gesagtgetan/cookiedialogue": "^3.5",
                 "jonnitto/imagesinarow": "^3.0",
                 "jonnitto/photoswipe": "^3.0",
+                "jonnitto/prettyembedcollection": "^1.0",
                 "neos/fusion-afx": "^1.2",
                 "neos/neos": "*",
                 "neos/neos-ui": "^3.3",

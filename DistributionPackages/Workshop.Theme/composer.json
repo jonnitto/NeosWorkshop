@@ -3,6 +3,7 @@
     "type": "neos-site",
     "require": {
         "neos/neos": "*",
+        "neos/seo": "^3.0",
         "neos/neos-ui": "^3.3",
         "neos/fusion-afx": "^1.2",
         "neos/redirecthandler-databasestorage": "^3.0",
@@ -24,8 +25,8 @@
         "wwwision/neos-creationdialogproperties": "^0.5.0",
         "jonnitto/photoswipe": "^3.0",
         "jonnitto/imagesinarow": "^3.0",
-        "neos/seo": "^3.0",
-        "yoast/yoast-seo-for-neos": "^0.2.2"
+        "yoast/yoast-seo-for-neos": "^0.2.2",
+        "jonnitto/prettyembedcollection": "^1.0"
     },
     "authors": [
         {

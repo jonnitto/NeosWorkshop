@@ -1,0 +1,4 @@
+Jonnitto:
+  PrettyEmbedHelper:
+    maximumWidth: 800
+    wrapper: 'reveal video-wrapper'
