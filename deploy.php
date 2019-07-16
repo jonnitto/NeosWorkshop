@@ -67,7 +67,7 @@ task('install:bash', function () {
         $bash_sync = get('bash_sync');
     } catch (\Throwable $th) {
     }
-    if ($bash_sync && askConfirmation('Do you want to install the synchronized bash script?', true)) {
+    if ($bash_sync && askConfirmation(' Do you want to install the synchronized bash script? ', true)) {
         run('wget -qN {{bash_sync}} -O syncBashScript.sh; source syncBashScript.sh');
         writeln('');
         writeln('<info>Synchronized bash scripts from GitHub successfully installed</info>');
@@ -82,7 +82,7 @@ task('install:wait', function () {
     writeln('<comment>Add this key as a deployment key in your Repository</comment>');
     writeln('<comment>under → Settings → Deploy keys</comment>');
     writeln('');
-    if (!askConfirmation('Press enter to continue', true)) {
+    if (!askConfirmation(' Press enter to continue ', true)) {
         writeln('');
         writeln('<error> Installation canceled </error>');
         writeln('');
