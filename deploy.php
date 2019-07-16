@@ -71,7 +71,8 @@ task('install:bash', function () {
         writeln('');
         exit;
     }
-});
+})->shallow();
+
 
 desc('Wait for the user to continue');
 task('install:wait', function () {
