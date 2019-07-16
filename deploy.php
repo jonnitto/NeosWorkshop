@@ -24,8 +24,13 @@ task('ssh:key', function () {
     $pub = run('cat ~/.ssh/id_rsa.pub');
     writeln('');
     writeln('<comment>Your id_rsa.pub key is:</comment>');
-    writeln('<info>' . $pub . '</info>');
+    writeln("<info>{$pub}</info>");
     writeln('');
+
+    $repository = preg_replace('/.*@([^:]*).*/', '$1', get('repository'));
+    if ($repository) {
+        run("ssh-keyscan {$repository} >> ~/.ssh/known_hosts");
+    }
 })->shallow();
 
 desc('Initialize installation on Uberspace');
