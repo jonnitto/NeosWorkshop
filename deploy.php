@@ -17,7 +17,10 @@ set('shared_files', [
 
 desc('Create and/or read the deployment key');
 task('ssh:key', function () {
-    run('if [ ! -f id_rsa.pub ]; then cat /dev/zero | ssh-keygen -q -N "" -t rsa -b 4096 -C "$(hostname -f)"; fi');
+    $hasKey = test('[ -f ~/.ssh/id_rsa.pub ]');
+    if (!$hasKey) {
+        run('cat /dev/zero | ssh-keygen -q -N "" -t rsa -b 4096 -C "$(hostname -f)"');
+    }
     $pub = run('cat ~/.ssh/id_rsa.pub');
     writeln('');
     writeln('<comment>Your id_rsa.pub key is:</comment>');
