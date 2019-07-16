@@ -1,6 +1,7 @@
 <?php
 
 namespace Deployer;
+use Symfony\Component\Yaml\Yaml;
 
 require_once 'recipe/flow_framework.php';
 
@@ -30,6 +31,7 @@ task('install', [
     'deploy:shared',
     'deploy:writable',
     'install:settings',
+    'install:copy',
     'deploy:run_migrations',
     'deploy:publish_resources',
     'install:symlink',
@@ -146,6 +148,32 @@ Neos: &settings
 TYPO3: *settings
 __EOF__
 ');
+})->setPrivate();
+
+
+desc('Import the local database and persistent resources');
+task('install:copy', function() {
+    if (askConfirmation(' Do you want to import your local database and persistent resources? ', true)) {
+        writeln('   Export, compress, upload and import database');
+        $yaml = runLocally('./flow configuration:show --type Settings --path Neos.Flow.persistence.backendOptions');
+        $settings = Yaml::parse($yaml);
+        $file = 'dump.sql';
+        $port = isset($settings['port']) ? $settings['port'] : '3306';
+        runLocally("mysqldump -h {$settings['host']} -P {$port} -u {$settings['user']} -p{$settings['password']} {$settings['dbname']} > {$file}");
+        runLocally("tar cfz {$file}.tgz {$file}");
+        upload("{$file}.tgz", "{{release_path}}/{$file}.tgz");
+        cd("{{release_path}}");
+        run("tar xzOf {$file}.tgz | mysql $(whoami)");
+        runLocally("rm -f {$file}.tgz {$file}");
+        run("rm -f {$file}.tgz");
+
+        writeln('   Compress, upload and extract persistent resources');
+        runLocally("tar cfz Resources.tgz Data/Persistent/Resources");
+        upload("Resources.tgz", "{{release_path}}/Resources.tgz");
+        run("tar xf Resources.tgz");
+        runLocally("rm -f Resources.tgz");
+        run("rm -f Resources.tgz");
+    }
 })->setPrivate();
 
 
