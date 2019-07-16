@@ -15,23 +15,6 @@ set('shared_files', [
     'Configuration/Settings.yaml',
 ]);
 
-desc('Create and/or read the deployment key');
-task('ssh:key', function () {
-    $hasKey = test('[ -f ~/.ssh/id_rsa.pub ]');
-    if (!$hasKey) {
-        run('cat /dev/zero | ssh-keygen -q -N "" -t rsa -b 4096 -C "$(hostname -f)"');
-    }
-    $pub = run('cat ~/.ssh/id_rsa.pub');
-    writeln('');
-    writeln('<comment>Your id_rsa.pub key is:</comment>');
-    writeln("<info>{$pub}</info>");
-    writeln('');
-
-    $repository = preg_replace('/.*@([^:]*).*/', '$1', get('repository'));
-    if ($repository) {
-        run("ssh-keyscan {$repository} >> ~/.ssh/known_hosts");
-    }
-})->shallow();
 
 desc('Initialize installation on Uberspace');
 task('install', [
@@ -56,6 +39,26 @@ task('install', [
     'install:success',
     'install:bash'
 ]);
+
+
+desc('Create and/or read the deployment key');
+task('ssh:key', function () {
+    $hasKey = test('[ -f ~/.ssh/id_rsa.pub ]');
+    if (!$hasKey) {
+        run('cat /dev/zero | ssh-keygen -q -N "" -t rsa -b 4096 -C "$(hostname -f)"');
+    }
+    $pub = run('cat ~/.ssh/id_rsa.pub');
+    writeln('');
+    writeln('<comment>Your id_rsa.pub key is:</comment>');
+    writeln("<info>{$pub}</info>");
+    writeln('');
+
+    $repository = preg_replace('/.*@([^:]*).*/', '$1', get('repository'));
+    if ($repository) {
+        run("ssh-keyscan {$repository} >> ~/.ssh/known_hosts");
+    }
+})->shallow();
+
 
 desc('Install the synchronized bash script');
 task('install:bash', function () {
@@ -96,6 +99,7 @@ task('install:success', function () {
     writeln('');
 })->shallow()->setPrivate();
 
+
 desc('Symlink the html folder');
 task('install:symlink', function () {
     within('{{html_path}}', function() {
@@ -104,6 +108,7 @@ task('install:symlink', function () {
         run('ln -s {{deploy_path}}/current/Web html');
     });
 })->setPrivate();
+
 
 desc('Check if Neos is already installed');
 task('install:check', function () {
@@ -116,6 +121,7 @@ task('install:check', function () {
         exit;
     }
 })->shallow()->setPrivate();
+
 
 desc('Create Settings.yaml for Neos');
 task('install:settings', function () {
@@ -142,6 +148,7 @@ __EOF__
 ');
 })->setPrivate();
 
+
 desc('Kill all PHP processes after symlink');
 task('deploy:kill_php', function () {
     run('killall -q php-fpm || true;');
@@ -154,19 +161,22 @@ task('yarn:pipeline', function () {
     runLocally('yarn pipeline');
 })->setPrivate();
 
+
 desc('Push rendererd resources to git');
 task('yarn:git', function () {
     runLocally('git add DistributionPackages/**/Resources/Public');
     runLocally('git add DistributionPacka ge s/**/Resources/Private/Templates/I nlineAssets ');
     runLocally('git commit -m ":lipstick: Build frontend resources" || echo ""');
     runLocally('git push');
-})->setPrivate();;
+})->setPrivate();
+
 
 desc('Build frontend files and push them to git');
 task('yarn', [
     'yarn:pipeline',
     'yarn:git'
 ]);
+
 
 desc('Create release tag on git');
 task('deploy:tag', function () {
