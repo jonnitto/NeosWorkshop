@@ -77,7 +77,7 @@ task('install:bash', function () {
 desc('Wait for the user to continue');
 task('install:wait', function () {
     writeln('<comment>Add this key as a deployment key in your Repository</comment>');
-    writeln('<comment> under → Settings → Deploy keys</comment>');
+    writeln('<comment>under → Settings → Deploy keys</comment>');
     writeln('');
     if (!askConfirmation('Press enter to continue', true)) {
         writeln('');
