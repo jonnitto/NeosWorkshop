@@ -124,8 +124,8 @@ Neos: &settings
     persistence:
       backendOptions:
         driver: pdo_mysql
-        dbname: ${USER}
-        user: ${USER}
+        dbname: $(whoami)
+        user: $(whoami)
         password: \'$(grep -Po -m 1 "password=\K(\S)*" ~/.my.cnf)\'
         host: localhost
 TYPO3: *settings
