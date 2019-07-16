@@ -15,7 +15,8 @@
     },
     "require-dev": {
         "carbon/gulp": "^7.4",
-        "moc/synchronizeurl": "^2.0"
+        "moc/synchronizeurl": "^2.0",
+        "deployer/deployer": "^6.4"
     },
     "scripts": {
         "post-update-cmd": [
