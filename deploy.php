@@ -108,13 +108,10 @@ task('install:check', function () {
     }
 })->shallow()->setPrivate();
 
-desc('Create DB and Settings.yaml for Neos');
+desc('Create Settings.yaml for Neos');
 task('install:settings', function () {
     cd('{{release_path}}');
     run('
-dbName=$(echo ${PWD##*/} | perl -ne \' print lc (join ("_", split(/ (? = [A - Z]) /))) \')
-dbName="neos_${dbName}"
-mysql -uroot -proot -e "create database ${dbName}"
 cat > Configuration/Settings.yaml <<__EOF__
 Neos: &settings
   Imagine:
