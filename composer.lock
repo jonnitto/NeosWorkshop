@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1c3f9279f9b3870617019f95e0829df3",
+    "content-hash": "926064549d0ea3813ccc228a8668d501",
     "packages": [
         {
             "name": "aertmann/history",
@@ -6192,6 +6192,42 @@
                 "update"
             ],
             "time": "2018-02-27T17:29:10+00:00"
+        },
+        {
+            "name": "jonnitto/neos-deployer",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/neos-deployer.git",
+                "reference": "dc31ff962af412bcd9a6bf8f9f4523c92a06a513"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/neos-deployer/zipball/dc31ff962af412bcd9a6bf8f9f4523c92a06a513",
+                "reference": "dc31ff962af412bcd9a6bf8f9f4523c92a06a513",
+                "shasum": ""
+            },
+            "require-dev": {
+                "deployer/deployer": "^6.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Uhlmann",
+                    "email": "me@jonnitto.ch"
+                }
+            ],
+            "description": "Unofficial Deployer recipes for interacting with Neos CMS.",
+            "time": "2019-07-17T07:21:02+00:00"
         },
         {
             "name": "moc/synchronizeurl",
