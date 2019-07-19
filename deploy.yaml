@@ -6,20 +6,20 @@ your.domain.tld:
 
   # Put here your hostname
   # https://dashboard.uberspace.de/dashboard/datasheet
-  hostname: HOST.uberspace.de
+  hostname: __HOST__.uberspace.de
 
   # Put here your Uberspace username
-  user: USERNAME
+  user: __USERNAME__
 
   # Put here your ssh repository 
-  repository: git@github.com:jonnitto/NeosWorkshop.git
+  repository: git@github.com:__USERNAME__/__REPO__.git
+
+  # Add here your slack hook (https://deployer.org/recipes/slack.html): 
+  slack_webhook: https://hooks.slack.com/services/__YOUR/SLACK/HOOK__
+
   port: 22
   forwardAgent: false
   multiplexing: true
   sshOptions:
     UserKnownHostsFile: /dev/null
     StrictHostKeyChecking: no
-
-  # If you remove this line, you will be asked if you want to install 
-  # synchronized bash script from https://github.com/jonnitto/bash
-  bash_sync: false

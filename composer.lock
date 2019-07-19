@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "926064549d0ea3813ccc228a8668d501",
+    "content-hash": "94b37bce4017a7d33930d5f3922e7c57",
     "packages": [
         {
             "name": "aertmann/history",
@@ -6194,21 +6194,79 @@
             "time": "2018-02-27T17:29:10+00:00"
         },
         {
-            "name": "jonnitto/neos-deployer",
-            "version": "0.1.0",
+            "name": "deployer/recipes",
+            "version": "6.2.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jonnitto/neos-deployer.git",
-                "reference": "dc31ff962af412bcd9a6bf8f9f4523c92a06a513"
+                "url": "https://github.com/deployphp/recipes.git",
+                "reference": "84b3229c518c094a950e1fe785b7b8f9598770fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jonnitto/neos-deployer/zipball/dc31ff962af412bcd9a6bf8f9f4523c92a06a513",
-                "reference": "dc31ff962af412bcd9a6bf8f9f4523c92a06a513",
+                "url": "https://api.github.com/repos/deployphp/recipes/zipball/84b3229c518c094a950e1fe785b7b8f9598770fe",
+                "reference": "84b3229c518c094a950e1fe785b7b8f9598770fe",
                 "shasum": ""
+            },
+            "require": {
+                "php": "~7.0"
+            },
+            "replace": {
+                "deployer/recipes": "self.version"
             },
             "require-dev": {
                 "deployer/deployer": "^6.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Medvedev",
+                    "email": "anton@medv.io"
+                }
+            ],
+            "description": "3rd party deployer recipes",
+            "homepage": "https://github.com/deployphp/recipes",
+            "keywords": [
+                "cachetool",
+                "cloudflare",
+                "deploy",
+                "deployer",
+                "deployment",
+                "hipchat",
+                "newrelic",
+                "rabbit",
+                "recipes",
+                "sentry",
+                "slack",
+                "yarn"
+            ],
+            "time": "2019-06-27T06:47:18+00:00"
+        },
+        {
+            "name": "jonnitto/neos-deployer",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonnitto/neos-deployer.git",
+                "reference": "5643b18db904ff3cb2a3b221cf04d67b81e95e14"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonnitto/neos-deployer/zipball/5643b18db904ff3cb2a3b221cf04d67b81e95e14",
+                "reference": "5643b18db904ff3cb2a3b221cf04d67b81e95e14",
+                "shasum": ""
+            },
+            "require": {
+                "deployer/deployer": "^6.4",
+                "deployer/recipes": "^6.2"
             },
             "type": "library",
             "autoload": {
@@ -6226,8 +6284,8 @@
                     "email": "me@jonnitto.ch"
                 }
             ],
-            "description": "Unofficial Deployer recipes for interacting with Neos CMS.",
-            "time": "2019-07-17T07:21:02+00:00"
+            "description": "Unofficial deployer recipes for interacting with Neos CMS.",
+            "time": "2019-07-19T11:47:55+00:00"
         },
         {
             "name": "moc/synchronizeurl",
