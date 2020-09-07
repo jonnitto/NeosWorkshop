@@ -17,11 +17,11 @@
     },
     "require": {
         "carbon/frontend": "^4.4",
-        "carbon/notification": "^1.3",
+        "carbon/notification": "^2.0",
         "carbon/eel": "^1.5",
         "carbon/link": "^1.4",
         "carbon/image": "^2.1",
-        "sitegeist/kaleidoscope": "^3.0"
+        "sitegeist/kaleidoscope": "^5.0"
     },
     "extra": {
         "neos": {
